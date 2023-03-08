@@ -23,8 +23,8 @@ class FirstScreen extends StatelessWidget {
               Image.asset(
                 'assets/logo.png',
                 alignment: Alignment.centerRight,
-                width: 75,
-                height: 75,
+                width: 150,
+                height: 150,
               ),
 
               // ignore: prefer_const_constructors
