@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 
 class FirstScreen extends StatelessWidget {
-  static const double _logoWidth = 0.15;
-
   const FirstScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
-    final logoWidth = mediaQuery.size.width * _logoWidth;
-
     return Scaffold(
       backgroundColor: const Color(0xFFFDB515).withOpacity(0.82),
       body: Center(
@@ -28,7 +24,7 @@ class FirstScreen extends StatelessWidget {
                 children: [
                   Image.asset(
                     'assets/logo.png',
-                    width: logoWidth,
+                    width: mediaQuery.size.width * 0.15,
                   ),
                   const SizedBox(width: 40),
                   // Expanded(
@@ -69,7 +65,7 @@ class FirstScreen extends StatelessWidget {
                 ),
                 child: Image.asset(
                   'assets/sun_logo.png',
-                  width: logoWidth,
+                  width: mediaQuery.size.width * 0.5,
                 ),
               ),
             ],
