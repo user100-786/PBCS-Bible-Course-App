@@ -29,17 +29,17 @@ class FirstScreen extends StatelessWidget {
                   ),
                   const SizedBox(width: 40),
                   // Expanded(
-                    Text(
-                      'خدا کا کلام',
-                      style: TextStyle(
-                        color: appPrimaryColor,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
-                        fontSize: 50,
-                      ),
-                      textAlign: TextAlign.right,
-                      textDirection: TextDirection.rtl,
+                  Text(
+                    'خدا کا کلام',
+                    style: TextStyle(
+                      color: appPrimaryColor,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
+                      fontSize: 50,
                     ),
+                    textAlign: TextAlign.right,
+                    textDirection: TextDirection.rtl,
+                  ),
                   // ),
                 ],
               ),
@@ -62,14 +62,14 @@ class FirstScreen extends StatelessWidget {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(32),
-                  color: const Color(0xffffdcbc),
+                  color: tSecondaryColor,
                   boxShadow: [
                     BoxShadow(
                       color: tSecondaryColor,
                       spreadRadius: 5,
-                      blurRadius: 15
+                      blurRadius: 15,
                     ),
-                  ]
+                  ],
                 ),
                 child: Image.asset(
                   'assets/sun_logo.png',
