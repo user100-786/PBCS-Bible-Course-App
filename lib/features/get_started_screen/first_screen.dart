@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../constants/colors.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
@@ -7,7 +8,7 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
-      backgroundColor: const Color(0xFFFDB515).withOpacity(0.82),
+      backgroundColor: appPrimaryColor,
       body: Center(
         child: Container(
           padding: const EdgeInsets.all(20.0),
@@ -28,17 +29,17 @@ class FirstScreen extends StatelessWidget {
                   ),
                   const SizedBox(width: 40),
                   // Expanded(
-                    Text(
-                      'خدا کا کلام',
-                      style: TextStyle(
-                        color: const Color(0xFFFDB515).withOpacity(0.82),
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
-                        fontSize: 50,
-                      ),
-                      textAlign: TextAlign.right,
-                      textDirection: TextDirection.rtl,
+                  Text(
+                    'خدا کا کلام',
+                    style: TextStyle(
+                      color: appPrimaryColor,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
+                      fontSize: 50,
                     ),
+                    textAlign: TextAlign.right,
+                    textDirection: TextDirection.rtl,
+                  ),
                   // ),
                 ],
               ),
@@ -61,7 +62,14 @@ class FirstScreen extends StatelessWidget {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(32),
-                  color: const Color(0xffffdcbc),
+                  color: tSecondaryColor,
+                  boxShadow: [
+                    BoxShadow(
+                      color: tSecondaryColor,
+                      spreadRadius: 5,
+                      blurRadius: 15,
+                    ),
+                  ],
                 ),
                 child: Image.asset(
                   'assets/sun_logo.png',
