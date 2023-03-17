@@ -12,9 +12,9 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   bool _showPassword = false;
-  String? _email, _password;
+  String? _phone, _password;
 
-  Widget _buildEmail() {
+  Widget _buildPhone() {
     return TextFormField(
       decoration: InputDecoration(
         labelText: 'Phone',
@@ -38,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
       },
 
       onSaved: (value) {
-        _email = value!;
+        _phone = value!;
       },
     );
   }
@@ -171,7 +171,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 30),
-                        _buildEmail(),
+                        _buildPhone(),
                         const SizedBox(height: 20),
                         _buildPassword(),
                         const SizedBox(height: 20),
@@ -180,7 +180,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             if (_formKey.currentState!.validate()) {
                               _formKey.currentState!.save();
 
-                              // AuthenticateUser(_email, _password);
+                              // AuthenticateUser(_phone, _password);
                             }
                           },
                           child: Text(
