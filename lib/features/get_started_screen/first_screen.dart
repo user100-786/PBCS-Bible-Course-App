@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbcs_bible_course/features/get_started_screen/login_screen.dart';
 import '../../constants/colors.dart';
 
 class FirstScreen extends StatelessWidget {
@@ -71,9 +72,35 @@ class FirstScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: Image.asset(
-                  'assets/sun_logo.png',
-                  width: mediaQuery.size.width * 0.5,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Image.asset(
+                      'assets/sun_logo.png',
+                      width: mediaQuery.size.width * 0.5,
+                    ),
+                    const Spacer(),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginScreen(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: appPrimaryColor,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15)),
+                        elevation: 2,
+                      ),
+                      child: const Text(
+                        'Get Started',
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

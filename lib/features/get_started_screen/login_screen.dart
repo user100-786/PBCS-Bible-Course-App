@@ -12,35 +12,33 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   bool _showPassword = false;
-  String? _email, _password;
+  String? _phone, _password;
 
-  Widget _buildEmail() {
+  Widget _buildPhone() {
     return TextFormField(
       decoration: InputDecoration(
         labelText: 'Phone',
-        labelStyle: TextStyle(
-          color: Color(0xFFFDB515), // change this color as per your requirement
-        ),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
-        focusedBorder: const OutlineInputBorder(
+        focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 2,
-            color: Color(0xFFFDB515),
+            color: appPrimaryColor,
           ),
-          borderRadius: BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
         ),
       ),
       validator: (value) {
         if (value!.isEmpty) {
           return 'Please enter your phone number';
         }
-        if (!RegExp('[a-zA-Z0-9\\._]+@[a-z]+\\.[a-z]+').hasMatch(value)) {
+        if (!RegExp(r'^(\+92|0)?3\d{2}(-|\s)?\d{7}$').hasMatch(value)) {
           return 'Please enter a valid phone number';
         }
         return null;
       },
+
       onSaved: (value) {
-        _email = value!;
+        _phone = value!;
       },
     );
   }
@@ -51,12 +49,12 @@ class _LoginScreenState extends State<LoginScreen> {
       decoration: InputDecoration(
         labelText: 'Password',
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
-        focusedBorder: const OutlineInputBorder(
+        focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 2,
-            color: Color(0xFFFDB515),
+            color: appPrimaryColor,
           ),
-          borderRadius: BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
         ),
         suffixIcon: IconButton(
           icon: Icon(
@@ -173,7 +171,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 30),
-                        _buildEmail(),
+                        _buildPhone(),
                         const SizedBox(height: 20),
                         _buildPassword(),
                         const SizedBox(height: 20),
@@ -182,7 +180,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             if (_formKey.currentState!.validate()) {
                               _formKey.currentState!.save();
 
-                              // AuthenticateUser(_email, _password);
+                              // AuthenticateUser(_phone, _password);
                             }
                           },
                           child: Text(
