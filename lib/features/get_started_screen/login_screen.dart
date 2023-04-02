@@ -5,7 +5,10 @@ import '../../constants/colors.dart';
 // import '../get_started_screen/first_screen.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _LoginScreenState createState() => _LoginScreenState();
 }
 
@@ -36,7 +39,6 @@ class _LoginScreenState extends State<LoginScreen> {
         }
         return null;
       },
-
       onSaved: (value) {
         _phone = value!;
       },
@@ -92,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 20.0),
             width: mediaQuery.size.width * 0.9,
             height: mediaQuery.size.height * 0.95,
             decoration: BoxDecoration(
@@ -162,15 +164,21 @@ class _LoginScreenState extends State<LoginScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        const Text(
-                          'Log In',
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.center,
+                        Image.asset(
+                          'assets/sun_logo.png',
+                          width: mediaQuery.size.width * 0.2,
+                          height: mediaQuery.size.height * 0.2,
                         ),
-                        const SizedBox(height: 30),
+                        // const Text(
+                        //   'Log In',
+                        //   // textDirection: TextDirection.ltr,
+                        //   style: TextStyle(
+                        //     fontSize: 18,
+                        //     fontWeight: FontWeight.normal,
+                        //   ),
+                        //   textAlign: TextAlign.left,
+                        // ),
+                        const SizedBox(height: 10),
                         _buildPhone(),
                         const SizedBox(height: 20),
                         _buildPassword(),
@@ -183,7 +191,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               // AuthenticateUser(_phone, _password);
                             }
                           },
-                          child: Text(
+                          child: const Text(
                             'Log In',
                           ),
                           style: ElevatedButton.styleFrom(
@@ -197,6 +205,35 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+                // const SizedBox(height: 10),
+                const Spacer(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    const Text(
+                      'Don\'t have an account?',
+                      // textDirection: TextDirection.ltr,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const Text(
+                      ' Sign Up',
+                      // textDirection: TextDirection.ltr,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.amberAccent,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                )
               ],
             ),
           ),
