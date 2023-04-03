@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../constants/colors.dart';
+import 'login_screen.dart';
 // import 'package:flutter_login/flutter_login.dart';
 // import 'package:flutter_login/theme.dart';
 // import '../get_started_screen/first_screen.dart';
@@ -233,7 +234,7 @@ class SignUpScreenState extends State<SignUpScreen> {
                             }
                           },
                           child: const Text(
-                            'Log In',
+                            'Sign up',
                           ),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: appPrimaryColor,
@@ -263,15 +264,25 @@ class SignUpScreenState extends State<SignUpScreen> {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    const Text(
-                      ' Login',
-                      // textDirection: TextDirection.ltr,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.amberAccent,
+                    GestureDetector(
+                      child: const Text(
+                        ' Login',
+                        // textDirection: TextDirection.ltr,
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.amberAccent,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LoginScreen(),
+                          ),
+                        );
+                      },
                     ),
                   ],
                 )

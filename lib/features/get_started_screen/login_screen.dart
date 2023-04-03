@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../constants/colors.dart';
+import 'sign_up_screen.dart';
 // import 'package:flutter_login/flutter_login.dart';
 // import 'package:flutter_login/theme.dart';
 // import '../get_started_screen/first_screen.dart';
@@ -222,15 +223,25 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    const Text(
-                      ' Sign Up',
-                      // textDirection: TextDirection.ltr,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.amberAccent,
+                    GestureDetector(
+                      child: const Text(
+                        ' Sign Up',
+                        // textDirection: TextDirection.ltr,
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.amberAccent,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpScreen(),
+                          ),
+                        );
+                      },
                     ),
                   ],
                 )
