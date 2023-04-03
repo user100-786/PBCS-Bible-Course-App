@@ -52,7 +52,7 @@ class FirstScreen extends StatelessWidget {
                   fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
                   fontSize: 30,
                 ),
-                textAlign: TextAlign.right,
+                textAlign: TextAlign.center,
                 textDirection: TextDirection.rtl,
               ),
               const Spacer(),
@@ -76,6 +76,7 @@ class FirstScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
+                    const Spacer(),
                     Image.asset(
                       'assets/sun_logo.png',
                       width: mediaQuery.size.width * 0.5,
@@ -100,6 +101,7 @@ class FirstScreen extends StatelessWidget {
                         'Get Started',
                       ),
                     ),
+                    const Spacer(),
                   ],
                 ),
               ),

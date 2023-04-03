@@ -18,13 +18,13 @@ class _LoginScreenState extends State<LoginScreen> {
     return TextFormField(
       decoration: InputDecoration(
         labelText: 'Phone',
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 2,
             color: appPrimaryColor,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
         ),
       ),
       validator: (value) {
@@ -48,13 +48,13 @@ class _LoginScreenState extends State<LoginScreen> {
       obscureText: !_showPassword,
       decoration: InputDecoration(
         labelText: 'Password',
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 2,
             color: appPrimaryColor,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
         ),
         suffixIcon: IconButton(
           icon: Icon(
