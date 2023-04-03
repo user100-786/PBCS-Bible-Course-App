@@ -4,30 +4,58 @@ import '../../constants/colors.dart';
 // import 'package:flutter_login/theme.dart';
 // import '../get_started_screen/first_screen.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _LoginScreenState createState() => _LoginScreenState();
+  SignUpScreenState createState() => SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class SignUpScreenState extends State<SignUpScreen> {
   final _formKey = GlobalKey<FormState>();
   bool _showPassword = false;
   String? _phone, _password;
 
-  Widget _buildPhone() {
+  Widget _buildUserName() {
     return TextFormField(
       decoration: InputDecoration(
-        labelText: 'Phone',
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+        labelText: 'Full Name',
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 2,
             color: appPrimaryColor,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(20)),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
+        ),
+      ),
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'Please enter your name';
+        }
+        if (!RegExp(r"^[A-Za-z][A-Za-z0-9_]{7,29}$").hasMatch(value)) {
+          return 'Please enter a valid name';
+        }
+        return null;
+      },
+      onSaved: (value) {
+        _phone = value!;
+      },
+    );
+  }
+
+  Widget _buildPhone() {
+    return TextFormField(
+      decoration: InputDecoration(
+        labelText: 'Phone',
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            width: 2,
+            color: appPrimaryColor,
+          ),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
         ),
       ),
       validator: (value) {
@@ -45,18 +73,18 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _buildPassword() {
+  Widget _buildPassword(String labelText) {
     return TextFormField(
       obscureText: !_showPassword,
       decoration: InputDecoration(
-        labelText: 'Password',
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+        labelText: labelText,
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 2,
             color: appPrimaryColor,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(20)),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
         ),
         suffixIcon: IconButton(
           icon: Icon(
@@ -139,7 +167,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const Spacer(),
                 Container(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 10.0, horizontal: 20.0),
                   width: mediaQuery.size.height * 0.5,
                   height: mediaQuery.size.height * 0.6,
                   alignment: Alignment.center,
@@ -164,11 +193,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Image.asset(
-                          'assets/sun_logo.png',
-                          width: mediaQuery.size.width * 0.2,
-                          height: mediaQuery.size.height * 0.2,
-                        ),
+                        // Image.asset(
+                        //   'assets/sun_logo.png',
+                        //   width: mediaQuery.size.width * 0.2,
+                        //   height: mediaQuery.size.height * 0.2,
+                        // ),
                         // const Text(
                         //   'Log In',
                         //   // textDirection: TextDirection.ltr,
@@ -178,11 +207,23 @@ class _LoginScreenState extends State<LoginScreen> {
                         //   ),
                         //   textAlign: TextAlign.left,
                         // ),
+                        // const SizedBox(height: 10),
+                        const Text(
+                          '  Please Sign Up to continue',
+                          style: TextStyle(
+                            fontWeight: FontWeight.normal,
+                            color: Color(0xFF707070),
+                          ),
+                        ),
+                        const SizedBox(height: 03),
+                        _buildUserName(),
                         const SizedBox(height: 10),
                         _buildPhone(),
-                        const SizedBox(height: 20),
-                        _buildPassword(),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 10),
+                        _buildPassword("Password"),
+                        const SizedBox(height: 10),
+                        _buildPassword("Confirm Password"),
+                        const SizedBox(height: 10),
                         ElevatedButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
@@ -214,7 +255,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
                     const Text(
-                      'Don\'t have an account?',
+                      'Already have an account?',
                       // textDirection: TextDirection.ltr,
                       style: TextStyle(
                         fontSize: 14,
@@ -223,7 +264,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       textAlign: TextAlign.center,
                     ),
                     const Text(
-                      ' Sign Up',
+                      ' Login',
                       // textDirection: TextDirection.ltr,
                       style: TextStyle(
                         fontSize: 14,
