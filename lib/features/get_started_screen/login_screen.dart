@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../constants/colors.dart';
-// import 'package:flutter_login/flutter_login.dart';
-// import 'package:flutter_login/theme.dart';
-// import '../get_started_screen/first_screen.dart';
+import '../../course_modules/courses_screen.dart';
+import 'sign_up_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -21,13 +20,13 @@ class _LoginScreenState extends State<LoginScreen> {
     return TextFormField(
       decoration: InputDecoration(
         labelText: 'Phone',
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 2,
             color: appPrimaryColor,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
         ),
       ),
       validator: (value) {
@@ -50,13 +49,13 @@ class _LoginScreenState extends State<LoginScreen> {
       obscureText: !_showPassword,
       decoration: InputDecoration(
         labelText: 'Password',
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 2,
             color: appPrimaryColor,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
         ),
         suffixIcon: IconButton(
           icon: Icon(
@@ -184,13 +183,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         _buildPassword(),
                         const SizedBox(height: 20),
                         ElevatedButton(
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              _formKey.currentState!.save();
-
-                              // AuthenticateUser(_phone, _password);
-                            }
-                          },
                           child: const Text(
                             'Log In',
                           ),
@@ -200,6 +192,18 @@ class _LoginScreenState extends State<LoginScreen> {
                                 borderRadius: BorderRadius.circular(15)),
                             elevation: 2,
                           ),
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              _formKey.currentState!.save();
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const CoursesScreen(),
+                                ),
+                              );
+                              // AuthenticateUser(_phone, _password);
+                            }
+                          },
                         ),
                       ],
                     ),
@@ -222,15 +226,25 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    const Text(
-                      ' Sign Up',
-                      // textDirection: TextDirection.ltr,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.amberAccent,
+                    GestureDetector(
+                      child: const Text(
+                        ' Sign Up',
+                        // textDirection: TextDirection.ltr,
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.amberAccent,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpScreen(),
+                          ),
+                        );
+                      },
                     ),
                   ],
                 )

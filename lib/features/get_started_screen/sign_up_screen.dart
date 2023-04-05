@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../constants/colors.dart';
-// import 'package:flutter_login/flutter_login.dart';
-// import 'package:flutter_login/theme.dart';
-// import '../get_started_screen/first_screen.dart';
+import 'login_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -21,13 +19,13 @@ class SignUpScreenState extends State<SignUpScreen> {
     return TextFormField(
       decoration: InputDecoration(
         labelText: 'Full Name',
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 2,
             color: appPrimaryColor,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
         ),
       ),
       validator: (value) {
@@ -49,13 +47,13 @@ class SignUpScreenState extends State<SignUpScreen> {
     return TextFormField(
       decoration: InputDecoration(
         labelText: 'Phone',
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 2,
             color: appPrimaryColor,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
         ),
       ),
       validator: (value) {
@@ -78,13 +76,13 @@ class SignUpScreenState extends State<SignUpScreen> {
       obscureText: !_showPassword,
       decoration: InputDecoration(
         labelText: labelText,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 2,
             color: appPrimaryColor,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
         ),
         suffixIcon: IconButton(
           icon: Icon(
@@ -233,7 +231,7 @@ class SignUpScreenState extends State<SignUpScreen> {
                             }
                           },
                           child: const Text(
-                            'Log In',
+                            'Sign up',
                           ),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: appPrimaryColor,
@@ -263,15 +261,25 @@ class SignUpScreenState extends State<SignUpScreen> {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    const Text(
-                      ' Login',
-                      // textDirection: TextDirection.ltr,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.amberAccent,
+                    GestureDetector(
+                      child: const Text(
+                        ' Login',
+                        // textDirection: TextDirection.ltr,
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.amberAccent,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LoginScreen(),
+                          ),
+                        );
+                      },
                     ),
                   ],
                 )
