@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../constants/colors.dart';
+import '../../course_modules/courses_screen.dart';
 import 'sign_up_screen.dart';
-// import 'package:flutter_login/flutter_login.dart';
-// import 'package:flutter_login/theme.dart';
-// import '../get_started_screen/first_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -185,13 +183,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         _buildPassword(),
                         const SizedBox(height: 20),
                         ElevatedButton(
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              _formKey.currentState!.save();
-
-                              // AuthenticateUser(_phone, _password);
-                            }
-                          },
                           child: const Text(
                             'Log In',
                           ),
@@ -201,6 +192,18 @@ class _LoginScreenState extends State<LoginScreen> {
                                 borderRadius: BorderRadius.circular(15)),
                             elevation: 2,
                           ),
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              _formKey.currentState!.save();
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const CoursesScreen(),
+                                ),
+                              );
+                              // AuthenticateUser(_phone, _password);
+                            }
+                          },
                         ),
                       ],
                     ),
