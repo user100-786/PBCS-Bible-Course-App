@@ -32,7 +32,7 @@ class SignUpScreenState extends State<SignUpScreen> {
         if (value!.isEmpty) {
           return 'Please enter your name';
         }
-        if (!RegExp(r"^[A-Za-z][A-Za-z0-9_]{7,29}$").hasMatch(value)) {
+        if (!RegExp(r"^[A-Za-z]+(?:\s+[A-Za-z]+)*\s*$").hasMatch(value)) {
           return 'Please enter a valid name';
         }
         return null;
@@ -223,13 +223,6 @@ class SignUpScreenState extends State<SignUpScreen> {
                         _buildPassword("Confirm Password"),
                         const SizedBox(height: 10),
                         ElevatedButton(
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              _formKey.currentState!.save();
-
-                              // AuthenticateUser(_phone, _password);
-                            }
-                          },
                           child: const Text(
                             'Sign up',
                           ),
@@ -239,6 +232,18 @@ class SignUpScreenState extends State<SignUpScreen> {
                                 borderRadius: BorderRadius.circular(15)),
                             elevation: 2,
                           ),
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              _formKey.currentState!.save();
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const LoginScreen(),
+                                ),
+                              );
+                              // AuthenticateUser(_phone, _password);
+                            }
+                          },
                         ),
                       ],
                     ),
