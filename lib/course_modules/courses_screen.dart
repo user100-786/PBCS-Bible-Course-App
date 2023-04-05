@@ -139,6 +139,7 @@ class CoursesScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              const Spacer(),
             ],
           ),
         ),
