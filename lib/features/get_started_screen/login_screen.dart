@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../constants/colors.dart';
 import '../../course_modules/courses_screen.dart';
 import 'sign_up_screen.dart';
+import 'dashboard.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -198,7 +199,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const CoursesScreen(),
+                                  builder: (context) => const DashboardScreen(),
                                 ),
                               );
                               // AuthenticateUser(_phone, _password);
