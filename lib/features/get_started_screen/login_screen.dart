@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
         // Move to second screen
         context,
         MaterialPageRoute(
-          builder: (context) => CoursesScreen(),
+          builder: (context) => const DashboardScreen(),
         ),
       );
       setState(() {
@@ -181,59 +181,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       // ),
                     ],
                   ),
-<<<<<<< HEAD
-                  // child: Image.asset(
-                  //   'assets/sun_logo.png',
-                  //   width: mediaQuery.size.width * 0.2,
-                  // ),
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Image.asset(
-                          'assets/sun_logo.png',
-                          width: mediaQuery.size.width * 0.2,
-                          height: mediaQuery.size.height * 0.2,
-                        ),
-                        // const Text(
-                        //   'Log In',
-                        //   // textDirection: TextDirection.ltr,
-                        //   style: TextStyle(
-                        //     fontSize: 18,
-                        //     fontWeight: FontWeight.normal,
-                        //   ),
-                        //   textAlign: TextAlign.left,
-                        // ),
-                        const SizedBox(height: 10),
-                        _buildPhone(),
-                        const SizedBox(height: 20),
-                        _buildPassword(),
-                        const SizedBox(height: 20),
-                        ElevatedButton(
-                          child: const Text(
-                            'Log In',
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: appPrimaryColor,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)),
-                            elevation: 2,
-                          ),
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              _formKey.currentState!.save();
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const DashboardScreen(),
-                                ),
-                              );
-                              // AuthenticateUser(_phone, _password);
-                            }
-                          },
-=======
                   const SizedBox(height: 20),
                   const Text(
                     'توریت، زبور اور انجیل پر مبنی کورسز',
@@ -259,7 +206,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: tSecondaryColor,
                           spreadRadius: 5,
                           blurRadius: 15,
->>>>>>> 322808e7ccd4bc6922b01821ceeb0f9231fa8ee7
                         ),
                       ],
                     ),
@@ -303,7 +249,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               if (_formKey.currentState!.validate()) {
                                 _formKey.currentState!.save();
                                 login();
-
                                 // AuthenticateUser(_phone, _password);
                               }
                             },
@@ -359,7 +304,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),

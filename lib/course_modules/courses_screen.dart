@@ -48,35 +48,24 @@ class CoursesScreen extends StatelessWidget {
                   const SizedBox(
                     width: 12,
                   ),
-                  IconButton(
-                    onPressed: () {
-                      auth.signOut().then((value) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginScreen()));
-                      }).onError((error, stackTrace) {
-                        Utils().toastMessage(error.toString());
-                      });
-                    },
-                    icon: const Icon(Icons.login_outlined),
-                    iconSize: 30.0,
-                    color: appPrimaryColor,
-                  )
+                  // IconButton(
+                  //   onPressed: () {
+                  //     auth.signOut().then((value) {
+                  //       Navigator.push(
+                  //           context,
+                  //           MaterialPageRoute(
+                  //               builder: (context) => LoginScreen()));
+                  //     }).onError((error, stackTrace) {
+                  //       Utils().toastMessage(error.toString());
+                  //     });
+                  //   },
+                  //   icon: const Icon(Icons.login_outlined),
+                  //   iconSize: 30.0,
+                  //   color: appPrimaryColor,
+                  // ),
                   // ),
                 ],
               ),
-              // const SizedBox(height: 20),
-              // const Text(
-              //   'توریت زبور اور انجیل پر مبنی کورسز',
-              //   style: TextStyle(
-              //     fontWeight: FontWeight.bold,
-              //     fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
-              //     fontSize: 30,
-              //   ),
-              //   textAlign: TextAlign.center,
-              //   textDirection: TextDirection.rtl,
-              // ),
               const Spacer(),
               Container(
                 padding: const EdgeInsets.all(20.0),
