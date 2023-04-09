@@ -1,10 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pbcs_bible_course/features/get_started_screen/login_screen.dart';
+import 'package:pbcs_bible_course/utils/utils.dart';
 import '../../constants/colors.dart';
 
 class CoursesScreen extends StatelessWidget {
-  const CoursesScreen({super.key});
+  CoursesScreen({super.key});
 
+  final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -28,7 +31,7 @@ class CoursesScreen extends StatelessWidget {
                     'assets/logo.png',
                     width: mediaQuery.size.width * 0.15,
                   ),
-                  const SizedBox(width: 40),
+                  const SizedBox(width: 20),
                   // Expanded(
                   Text(
                     'Courses',
@@ -36,11 +39,30 @@ class CoursesScreen extends StatelessWidget {
                       color: appPrimaryColor,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Calibri',
-                      fontSize: 50,
+                      fontSize: 35,
                     ),
-                    textAlign: TextAlign.left,
+                    textAlign: TextAlign.center,
                     textDirection: TextDirection.ltr,
                   ),
+
+                  const SizedBox(
+                    width: 12,
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      auth.signOut().then((value) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreen()));
+                      }).onError((error, stackTrace) {
+                        Utils().toastMessage(error.toString());
+                      });
+                    },
+                    icon: const Icon(Icons.login_outlined),
+                    iconSize: 30.0,
+                    color: appPrimaryColor,
+                  )
                   // ),
                 ],
               ),

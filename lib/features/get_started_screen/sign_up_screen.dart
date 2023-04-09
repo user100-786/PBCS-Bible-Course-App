@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../constants/colors.dart';
+import '../../utils/utils.dart';
 import 'login_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -11,12 +14,34 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class SignUpScreenState extends State<SignUpScreen> {
+  FirebaseAuth _auth = FirebaseAuth.instance;
+  final DatabaseReference _database =
+      FirebaseDatabase.instance.reference().child('users');
+
+  final fullNameController = TextEditingController();
+  final phoneNumberController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
+  bool _isLoading = false;
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    phoneNumberController.dispose();
+    passwordController.dispose();
+    fullNameController.dispose();
+    confirmPasswordController.dispose();
+  }
+
   final _formKey = GlobalKey<FormState>();
   bool _showPassword = false;
   String? _phone, _password;
 
   Widget _buildUserName() {
     return TextFormField(
+      controller: fullNameController,
       decoration: InputDecoration(
         labelText: 'Full Name',
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
@@ -45,6 +70,7 @@ class SignUpScreenState extends State<SignUpScreen> {
 
   Widget _buildPhone() {
     return TextFormField(
+      controller: phoneNumberController,
       decoration: InputDecoration(
         labelText: 'Phone',
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
@@ -71,11 +97,53 @@ class SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  Widget _buildPassword(String labelText) {
+  Widget _buildPassword() {
     return TextFormField(
+      controller: passwordController,
       obscureText: !_showPassword,
       decoration: InputDecoration(
-        labelText: labelText,
+        labelText: 'Password',
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            width: 2,
+            color: appPrimaryColor,
+          ),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
+        ),
+        suffixIcon: IconButton(
+          icon: Icon(
+            _showPassword ? Icons.visibility : Icons.visibility_off,
+            color: Colors.grey,
+          ),
+          onPressed: () {
+            setState(() {
+              _showPassword = !_showPassword;
+            });
+          },
+        ),
+      ),
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'Please enter your password';
+        }
+        if (value.length < 6) {
+          return 'Password should be at least 6 characters long.';
+        }
+        return null;
+      },
+      onSaved: (value) {
+        _password = value!;
+      },
+    );
+  }
+
+  Widget _buildConfirmPassword() {
+    return TextFormField(
+      controller: confirmPasswordController,
+      obscureText: !_showPassword,
+      decoration: InputDecoration(
+        labelText: 'Confirm Password',
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
@@ -218,32 +286,86 @@ class SignUpScreenState extends State<SignUpScreen> {
                         const SizedBox(height: 10),
                         _buildPhone(),
                         const SizedBox(height: 10),
-                        _buildPassword("Password"),
+                        _buildPassword(),
                         const SizedBox(height: 10),
-                        _buildPassword("Confirm Password"),
+                        _buildConfirmPassword(),
                         const SizedBox(height: 10),
                         ElevatedButton(
-                          child: const Text(
-                            'Sign up',
-                          ),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: appPrimaryColor,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15)),
                             elevation: 2,
                           ),
-                          onPressed: () {
+
+                          onPressed: () async {
                             if (_formKey.currentState!.validate()) {
-                              _formKey.currentState!.save();
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const LoginScreen(),
-                                ),
-                              );
-                              // AuthenticateUser(_phone, _password);
+                              try {
+                                // Show the CircularProgressIndicator
+                                setState(() {
+                                  _isLoading = true;
+                                });
+
+                                UserCredential userCredential =
+                                    await _auth.createUserWithEmailAndPassword(
+                                        email:
+                                            '${phoneNumberController.text}@example.com'
+                                                .toString(),
+                                        password:
+                                            passwordController.text.toString());
+
+                                // Hide the CircularProgressIndicator
+                                setState(() {
+                                  _isLoading = false;
+                                });
+
+                                // Display a Toast message to indicate that the account was created successfully
+                                Utils().toastMessage(
+                                    'Account created successfully');
+
+                                // ignore: use_build_context_synchronously
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const LoginScreen(),
+                                  ),
+                                );
+
+                                // Sign up successful, do something here (e.g. navigate to a new screen)
+                              } on FirebaseAuthException catch (e) {
+                                // Hide the CircularProgressIndicator
+                                setState(() {
+                                  _isLoading = false;
+                                });
+
+                                if (e.code == 'weak-password') {
+                                  Utils().toastMessage(
+                                      'The password should be at least 6 characters.');
+                                } else if (e.code == 'email-already-in-use') {
+                                  Utils().toastMessage(
+                                      'The account already exists for that phone number.');
+                                } else {
+                                  Utils().toastMessage(e.toString());
+                                }
+                              } catch (e) {
+                                // Hide the CircularProgressIndicator
+                                setState(() {
+                                  _isLoading = false;
+                                });
+
+                                Utils().toastMessage(e.toString());
+                              }
                             }
                           },
+                          child: _isLoading
+                              ? const CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                      Colors.white),
+                                )
+                              : const Text('Sign Up'),
+                          // child: const Text(
+                          //   'Log In',
+                          // ),
                         ),
                       ],
                     ),
