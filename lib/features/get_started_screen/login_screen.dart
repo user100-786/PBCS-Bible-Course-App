@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
         // Move to second screen
         context,
         MaterialPageRoute(
-          builder: (context) => const DashboardScreen(),
+          builder: (context) => DashboardScreen(),
         ),
       );
       setState(() {

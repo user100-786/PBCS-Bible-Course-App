@@ -48,22 +48,21 @@ class CoursesScreen extends StatelessWidget {
                   const SizedBox(
                     width: 12,
                   ),
-                  // IconButton(
-                  //   onPressed: () {
-                  //     auth.signOut().then((value) {
-                  //       Navigator.push(
-                  //           context,
-                  //           MaterialPageRoute(
-                  //               builder: (context) => LoginScreen()));
-                  //     }).onError((error, stackTrace) {
-                  //       Utils().toastMessage(error.toString());
-                  //     });
-                  //   },
-                  //   icon: const Icon(Icons.login_outlined),
-                  //   iconSize: 30.0,
-                  //   color: appPrimaryColor,
-                  // ),
-                  // ),
+                  IconButton(
+                    onPressed: () {
+                      auth.signOut().then((value) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const LoginScreen()));
+                      }).onError((error, stackTrace) {
+                        Utils().toastMessage(error.toString());
+                      });
+                    },
+                    icon: const Icon(Icons.login_outlined),
+                    iconSize: 30.0,
+                    color: appPrimaryColor,
+                  ), 
                 ],
               ),
               const Spacer(),

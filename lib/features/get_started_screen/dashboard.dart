@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:pbcs_bible_course/features/get_started_screen/login_screen.dart';
 import '../../constants/colors.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:pbcs_bible_course/utils/utils.dart';
 import '../../course_modules/courses_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({super.key});
-
+  DashboardScreen({super.key});
+  
+  final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -42,7 +45,21 @@ class DashboardScreen extends StatelessWidget {
                     textAlign: TextAlign.left,
                     textDirection: TextDirection.ltr,
                   ),
-                  // ),
+                  IconButton(
+                    onPressed: () {
+                      auth.signOut().then((value) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const LoginScreen()));
+                      }).onError((error, stackTrace) {
+                        Utils().toastMessage(error.toString());
+                      });
+                    },
+                    icon: const Icon(Icons.login_outlined),
+                    iconSize: 30.0,
+                    color: appPrimaryColor,
+                  ), 
                 ],
               ),
               const Spacer(),

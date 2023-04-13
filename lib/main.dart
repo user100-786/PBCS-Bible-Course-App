@@ -4,6 +4,8 @@ import 'features/get_started_screen/first_screen.dart';
 import 'features/get_started_screen/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
+import 'features/get_started_screen/splash_screen.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FirstScreen(),
+      home: const SplashScreen(),
       // home: const SignUpScreen(),
       // home: LoginScreen(),
     );
