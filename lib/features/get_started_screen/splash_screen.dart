@@ -18,7 +18,8 @@ class _SplashScreenState extends State<SplashScreen> {
       // Navigator.pushNamed(context, '/first_screen.dart');
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder:(context) => const FirstScreen(),
+        MaterialPageRoute(
+          builder:(context) => const FirstScreen(),
         ),
       );
     });
