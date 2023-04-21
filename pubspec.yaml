@@ -41,6 +41,9 @@ flutter:
   assets:
   - assets/logo.png
   - assets/sun_logo.png
+  - assets/courses.png
+  - assets/quiz.png
+  - assets/analytics.png
   #   - images/a_dot_ham.jpeg
 
  

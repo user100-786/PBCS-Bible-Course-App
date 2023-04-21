@@ -1,31 +1,14 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:pbcs_bible_course/features/get_started_screen/login_screen.dart';
-import 'package:pbcs_bible_course/utils/utils.dart';
 import '../../constants/colors.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:pbcs_bible_course/utils/utils.dart';
+import '../../course_modules/courses_screen.dart';
 
-class CoursesScreen extends StatelessWidget {
-  CoursesScreen({super.key});
-
+class DashboardScreen extends StatelessWidget {
+  DashboardScreen({super.key});
+  
   final auth = FirebaseAuth.instance;
-  FirebaseDatabase database = FirebaseDatabase.instance;
-  DatabaseReference ref = FirebaseDatabase.instance.ref('Post');
-  //  final snapshot = await ref.child('Post').get();
-
-  // ignore: prefer_typing_uninitialized_variables
-  var event;
-  var username;
-
-  // fetchData() async {
-  //   event = await ref.once(DatabaseEventType.value);
-  //   username = event.snapshot.value.toString();
-
-  //   return username;
-  // }
-
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -52,19 +35,15 @@ class CoursesScreen extends StatelessWidget {
                   const SizedBox(width: 20),
                   // Expanded(
                   Text(
-                    'Courses',
+                    'Dashboard',
                     style: TextStyle(
                       color: appPrimaryColor,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Calibri',
                       fontSize: 35,
                     ),
-                    textAlign: TextAlign.center,
+                    textAlign: TextAlign.left,
                     textDirection: TextDirection.ltr,
-                  ),
-
-                  const SizedBox(
-                    width: 12,
                   ),
                   IconButton(
                     onPressed: () {
@@ -76,8 +55,6 @@ class CoursesScreen extends StatelessWidget {
                       }).onError((error, stackTrace) {
                         Utils().toastMessage(error.toString());
                       });
-
-                      // fetchData();
                     },
                     icon: const Icon(Icons.login_outlined),
                     iconSize: 30.0,
@@ -86,49 +63,88 @@ class CoursesScreen extends StatelessWidget {
                 ],
               ),
               const Spacer(),
-              Container(
-                padding: const EdgeInsets.all(20.0),
-                width: mediaQuery.size.width * 0.9,
-                height: mediaQuery.size.height * 0.15,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(32),
-                  color: tSecondaryColor,
-                  boxShadow: [
-                    BoxShadow(
-                      color: tSecondaryColor,
-                      spreadRadius: 5,
-                      blurRadius: 15,
-                    ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    // Text('Hello'),
-                    Expanded(
-                      child: FirebaseAnimatedList(
-                        query: ref,
-                        itemBuilder: (context, snapshot, animation, index) {
-                          return ListTile(
-                            title: Text(snapshot.child('id').value.toString()),
-                          );
-                          // return Text("hello world");
-                        },
-                        //),
-                        // child: FirebaseAnimatedList(
-                        //   query: ref,
-                        //   itemBuilder: (context, snapshot, animation, index) {
-                        //     // final key = snapshot.key;
-                        //     final value = snapshot.value;
-                        //     return ListTile(
-
-                        //       // subtitle: Text(value['description']),
-                        //     );
-                        //   },
+              GestureDetector(
+                child: Container(
+                  padding: const EdgeInsets.all(20.0),
+                  width: mediaQuery.size.width * 0.9,
+                  height: mediaQuery.size.height * 0.15,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(32),
+                    color: tSecondaryColor,
+                    boxShadow: [
+                      BoxShadow(
+                        color: tSecondaryColor,
+                        spreadRadius: 5,
+                        blurRadius: 15,
                       ),
-                      // child: Row(children: []),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/courses.png',
+                        width: mediaQuery.size.width * 0.2,
+                      ),
+                      const Text(
+                        'Courses',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Calibri',
+                          fontSize: 20,
+                        ),
+                        textAlign: TextAlign.center,
+                        textDirection: TextDirection.rtl,
+                      ),
+                    ],
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CoursesScreen(),
+                    ),
+                  );
+                },
+              ),
+              
+              const Spacer(),
+              Container(
+                padding: const EdgeInsets.all(20.0),
+                width: mediaQuery.size.width * 0.9,
+                height: mediaQuery.size.height * 0.15,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(32),
+                  color: tSecondaryColor,
+                  boxShadow: [
+                    BoxShadow(
+                      color: tSecondaryColor,
+                      spreadRadius: 5,
+                      blurRadius: 15,
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/quiz.png',
+                      width: mediaQuery.size.width * 0.2,
+                    ),
+                    const Text(
+                      'Quizes',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Calibri',
+                        fontSize: 20,
+                      ),
+                      textAlign: TextAlign.center,
+                      textDirection: TextDirection.rtl,
                     ),
                   ],
                 ),
@@ -151,41 +167,23 @@ class CoursesScreen extends StatelessWidget {
                   ],
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    // Image.asset(
-                    //   'assets/sun_logo.png',
-                    //   width: mediaQuery.size.width * 0.5,
-                    // ),
-                  ],
-                ),
-              ),
-              const Spacer(),
-              Container(
-                padding: const EdgeInsets.all(20.0),
-                width: mediaQuery.size.width * 0.9,
-                height: mediaQuery.size.height * 0.15,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(32),
-                  color: tSecondaryColor,
-                  boxShadow: [
-                    BoxShadow(
-                      color: tSecondaryColor,
-                      spreadRadius: 5,
-                      blurRadius: 15,
+                    Image.asset(
+                      'assets/analytics.png',
+                      width: mediaQuery.size.width * 0.2,
                     ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    // Image.asset(
-                    //   'assets/sun_logo.png',
-                    //   width: mediaQuery.size.width * 0.5,
-                    // ),
+                    const Text(
+                      'Analytics',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Analytics',
+                        fontSize: 18,
+                      ),
+                      textAlign: TextAlign.center,
+                      textDirection: TextDirection.rtl,
+                    ),
                   ],
                 ),
               ),

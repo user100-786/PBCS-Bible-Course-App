@@ -5,6 +5,7 @@ import 'package:pbcs_bible_course/utils/utils.dart';
 import '../../constants/colors.dart';
 import '../../course_modules/courses_screen.dart';
 import 'sign_up_screen.dart';
+import 'dashboard.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -44,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
         // Move to second screen
         context,
         MaterialPageRoute(
-          builder: (context) => CoursesScreen(),
+          builder: (context) => DashboardScreen(),
         ),
       );
       setState(() {
@@ -248,7 +249,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               if (_formKey.currentState!.validate()) {
                                 _formKey.currentState!.save();
                                 login();
-
                                 // AuthenticateUser(_phone, _password);
                               }
                             },
@@ -304,7 +304,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
