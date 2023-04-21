@@ -171,6 +171,9 @@ class SignUpScreenState extends State<SignUpScreen> {
         if (value.length < 6) {
           return 'Password should be at least 6 characters long.';
         }
+        if (value != passwordController.text) {
+          return 'Password does not match';
+        }
         return null;
       },
       onSaved: (value) {
