@@ -1,4 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:pbcs_bible_course/features/get_started_screen/login_screen.dart';
 import 'package:pbcs_bible_course/utils/utils.dart';
@@ -8,6 +11,21 @@ class CoursesScreen extends StatelessWidget {
   CoursesScreen({super.key});
 
   final auth = FirebaseAuth.instance;
+  FirebaseDatabase database = FirebaseDatabase.instance;
+  DatabaseReference ref = FirebaseDatabase.instance.ref('Post');
+  //  final snapshot = await ref.child('Post').get();
+
+  // ignore: prefer_typing_uninitialized_variables
+  var event;
+  var username;
+
+  // fetchData() async {
+  //   event = await ref.once(DatabaseEventType.value);
+  //   username = event.snapshot.value.toString();
+
+  //   return username;
+  // }
+
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -58,6 +76,8 @@ class CoursesScreen extends StatelessWidget {
                       }).onError((error, stackTrace) {
                         Utils().toastMessage(error.toString());
                       });
+
+                      // fetchData();
                     },
                     icon: const Icon(Icons.login_outlined),
                     iconSize: 30.0,
@@ -98,10 +118,30 @@ class CoursesScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    // Image.asset(
-                    //   'assets/sun_logo.png',
-                    //   width: mediaQuery.size.width * 0.5,
-                    // ),
+                    // Text('Hello'),
+                    Expanded(
+                      child: FirebaseAnimatedList(
+                        query: ref,
+                        itemBuilder: (context, snapshot, animation, index) {
+                          return ListTile(
+                            title: Text(snapshot.child('id').value.toString()),
+                          );
+                          // return Text("hello world");
+                        },
+                        //),
+                        // child: FirebaseAnimatedList(
+                        //   query: ref,
+                        //   itemBuilder: (context, snapshot, animation, index) {
+                        //     // final key = snapshot.key;
+                        //     final value = snapshot.value;
+                        //     return ListTile(
+
+                        //       // subtitle: Text(value['description']),
+                        //     );
+                        //   },
+                      ),
+                      // child: Row(children: []),
+                    ),
                   ],
                 ),
               ),
