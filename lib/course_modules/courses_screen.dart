@@ -12,7 +12,7 @@ class CoursesScreen extends StatelessWidget {
 
   final auth = FirebaseAuth.instance;
   FirebaseDatabase database = FirebaseDatabase.instance;
-  DatabaseReference ref = FirebaseDatabase.instance.ref('Post');
+  DatabaseReference ref = FirebaseDatabase.instance.ref('/Course/Course_01');
   //  final snapshot = await ref.child('Post').get();
 
   // ignore: prefer_typing_uninitialized_variables
@@ -82,7 +82,7 @@ class CoursesScreen extends StatelessWidget {
                     icon: const Icon(Icons.login_outlined),
                     iconSize: 30.0,
                     color: appPrimaryColor,
-                  ), 
+                  ),
                 ],
               ),
               const Spacer(),
@@ -104,7 +104,7 @@ class CoursesScreen extends StatelessWidget {
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // Text('Hello'),
                     Expanded(
@@ -112,7 +112,17 @@ class CoursesScreen extends StatelessWidget {
                         query: ref,
                         itemBuilder: (context, snapshot, animation, index) {
                           return ListTile(
-                            title: Text(snapshot.child('id').value.toString()),
+                            title: Text(
+                              snapshot.child('title').value.toString(),
+                              style: const TextStyle(
+                                // color: appPrimaryColor,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
+                                fontSize: 20,
+                              ),
+                              textAlign: TextAlign.center,
+                              textDirection: TextDirection.rtl,
+                            ),
                           );
                           // return Text("hello world");
                         },
