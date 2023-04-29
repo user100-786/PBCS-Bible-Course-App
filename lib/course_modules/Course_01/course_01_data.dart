@@ -1,11 +1,20 @@
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import '../../constants/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class Course_01_data extends StatelessWidget {
+class Course_01_data extends StatefulWidget {
+  final auth = FirebaseAuth.instance;
+  FirebaseDatabase database = FirebaseDatabase.instance;
   Course_01_data({super.key});
 
-  final auth = FirebaseAuth.instance;
+  @override
+  State<Course_01_data> createState() => _Course_01_dataState();
+}
+
+class _Course_01_dataState extends State<Course_01_data> {
+  DatabaseReference ref = FirebaseDatabase.instance.ref('/Course_01');
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -44,6 +53,49 @@ class Course_01_data extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(
+                height: 20,
+                width: 20,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.9,
+                height: MediaQuery.of(context).size.height * 0.8,
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: SingleChildScrollView(
+                          // child: Text(
+                          //   'تورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیا اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیا اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیا اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاء کی شہ اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیا اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیا اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیا اور صحیفۂ امبیاء کی شہادتتورات، زبور اور صحیفۂ امبیاادتتورات، زبور اور صحیفۂ امبیاء کی شہادت',
+                          //   style: TextStyle(
+                          //     // color: appPrimaryColor,
+                          //     fontWeight: FontWeight.bold,
+                          //     fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
+                          //     fontSize: 15,
+                          //   ),
+                          //   textAlign: TextAlign.center,
+                          //   textDirection: TextDirection.rtl,
+                          // ),
+
+                          child: FirebaseAnimatedList(
+                        query: ref,
+                        itemBuilder: (context, snapshot, animation, index) {
+                          return Text(
+                            snapshot.child('/course_data').value.toString(),
+                            style: const TextStyle(
+                              // color: appPrimaryColor,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
+                              fontSize: 20,
+                            ),
+                            textAlign: TextAlign.center,
+                            textDirection: TextDirection.rtl,
+                          );
+                        },
+                      )),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),

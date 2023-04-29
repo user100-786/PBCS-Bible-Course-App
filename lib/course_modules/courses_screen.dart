@@ -14,7 +14,7 @@ class CoursesScreen extends StatelessWidget {
 
   final auth = FirebaseAuth.instance;
   FirebaseDatabase database = FirebaseDatabase.instance;
-  DatabaseReference ref = FirebaseDatabase.instance.ref('/Course/Course_01');
+  DatabaseReference ref = FirebaseDatabase.instance.ref('/Course_01');
   //  final snapshot = await ref.child('Post').get();
 
   // ignore: prefer_typing_uninitialized_variables
