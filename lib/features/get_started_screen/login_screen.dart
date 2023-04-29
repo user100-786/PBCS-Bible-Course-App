@@ -224,15 +224,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             width: mediaQuery.size.width * 0.2,
                             height: mediaQuery.size.height * 0.2,
                           ),
-                          // const Text(
-                          //   'Log In',
-                          //   // textDirection: TextDirection.ltr,
-                          //   style: TextStyle(
-                          //     fontSize: 18,
-                          //     fontWeight: FontWeight.normal,
-                          //   ),
-                          //   textAlign: TextAlign.left,
-                          // ),
                           const SizedBox(height: 10),
                           _buildPhone(),
                           const SizedBox(height: 20),
@@ -257,7 +248,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                         Colors.white),
                                   )
-                                : Text('Log In'),
+                                : const Text('Log In'),
                             // child: const Text(
                             //   'Log In',
                             // ),
