@@ -7,7 +7,7 @@ import '../../course_modules/courses_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   DashboardScreen({super.key});
-  
+
   final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
@@ -26,6 +26,42 @@ class DashboardScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              // Row(
+              //   children: [
+              //     Image.asset(
+              //       'assets/logo.png',
+              //       width: mediaQuery.size.width * 0.15,
+              //     ),
+              //     const SizedBox(width: 20),
+              //     // Expanded(
+              //     Text(
+              //       'Dashboard',
+              //       style: TextStyle(
+              //         color: appPrimaryColor,
+              //         fontWeight: FontWeight.bold,
+              //         fontFamily: 'Calibri',
+              //         fontSize: 35,
+              //       ),
+              //       textAlign: TextAlign.left,
+              //       textDirection: TextDirection.ltr,
+              //     ),
+              //     IconButton(
+              //       onPressed: () {
+              //         auth.signOut().then((value) {
+              //           Navigator.push(
+              //               context,
+              //               MaterialPageRoute(
+              //                   builder: (context) => const LoginScreen()));
+              //         }).onError((error, stackTrace) {
+              //           Utils().toastMessage(error.toString());
+              //         });
+              //       },
+              //       icon: const Icon(Icons.login_outlined),
+              //       iconSize: 30.0,
+              //       color: appPrimaryColor,
+              //     ),
+              //   ],
+              // ),
               Row(
                 children: [
                   Image.asset(
@@ -33,33 +69,52 @@ class DashboardScreen extends StatelessWidget {
                     width: mediaQuery.size.width * 0.15,
                   ),
                   const SizedBox(width: 20),
-                  // Expanded(
-                  Text(
-                    'Dashboard',
-                    style: TextStyle(
-                      color: appPrimaryColor,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Calibri',
-                      fontSize: 35,
+                  Expanded(
+                    child: Text(
+                      'Dashboard',
+                      style: TextStyle(
+                        color: appPrimaryColor,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Calibri',
+                        fontSize: 35,
+                      ),
+                      textAlign: TextAlign.left,
+                      textDirection: TextDirection.ltr,
                     ),
-                    textAlign: TextAlign.left,
-                    textDirection: TextDirection.ltr,
                   ),
-                  IconButton(
-                    onPressed: () {
-                      auth.signOut().then((value) {
-                        Navigator.push(
+                  PopupMenuButton<String>(
+                    onSelected: (value) {
+                      if (value == "signout") {
+                        // handle signout action
+                        auth.signOut().then((value) {
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const LoginScreen()));
-                      }).onError((error, stackTrace) {
-                        Utils().toastMessage(error.toString());
-                      });
+                                builder: (context) => const LoginScreen()),
+                          );
+                        }).onError((error, stackTrace) {
+                          Utils().toastMessage(error.toString());
+                        });
+                      } else if (value == "about") {
+                        // handle about action
+                      }
                     },
-                    icon: const Icon(Icons.login_outlined),
-                    iconSize: 30.0,
-                    color: appPrimaryColor,
-                  ), 
+                    itemBuilder: (BuildContext context) => [
+                      const PopupMenuItem(
+                        value: "signout",
+                        child: Text("Sign out"),
+                      ),
+                      const PopupMenuItem(
+                        value: "about",
+                        child: Text("About"),
+                      ),
+                    ],
+                    icon: Icon(
+                      Icons.more_vert,
+                      color: appPrimaryColor,
+                      size: 30.0,
+                    ),
+                  ),
                 ],
               ),
               const Spacer(),
@@ -110,7 +165,7 @@ class DashboardScreen extends StatelessWidget {
                   );
                 },
               ),
-              
+
               const Spacer(),
               Container(
                 padding: const EdgeInsets.all(20.0),
