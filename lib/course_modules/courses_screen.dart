@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:pbcs_bible_course/features/get_started_screen/login_screen.dart';
 import 'package:pbcs_bible_course/utils/utils.dart';
 import '../../constants/colors.dart';
+import 'Course_01/course_01.dart';
+import 'Course_02/course_02.dart';
 
 class CoursesScreen extends StatelessWidget {
   CoursesScreen({super.key});
@@ -18,13 +20,6 @@ class CoursesScreen extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
   var event;
   var username;
-
-  // fetchData() async {
-  //   event = await ref.once(DatabaseEventType.value);
-  //   username = event.snapshot.value.toString();
-
-  //   return username;
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -107,39 +102,7 @@ class CoursesScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // Text('Hello'),
-                    Expanded(
-                      child: FirebaseAnimatedList(
-                        query: ref,
-                        itemBuilder: (context, snapshot, animation, index) {
-                          return ListTile(
-                            title: Text(
-                              snapshot.child('title').value.toString(),
-                              style: const TextStyle(
-                                // color: appPrimaryColor,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
-                                fontSize: 20,
-                              ),
-                              textAlign: TextAlign.center,
-                              textDirection: TextDirection.rtl,
-                            ),
-                          );
-                          // return Text("hello world");
-                        },
-                        //),
-                        // child: FirebaseAnimatedList(
-                        //   query: ref,
-                        //   itemBuilder: (context, snapshot, animation, index) {
-                        //     // final key = snapshot.key;
-                        //     final value = snapshot.value;
-                        //     return ListTile(
-
-                        //       // subtitle: Text(value['description']),
-                        //     );
-                        //   },
-                      ),
-                      // child: Row(children: []),
-                    ),
+                    Course_01(),
                   ],
                 ),
               ),
