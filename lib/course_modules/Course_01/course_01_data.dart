@@ -73,28 +73,30 @@ class _Course_01_dataState extends State<Course_01_data> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.7,
+                height: MediaQuery.of(context).size.height * 0.75,
                 child: Column(
                   children: [
                     // Use the get() method to retrieve the document data
                     Expanded(
-                      child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
-                        future: FirebaseFirestore.instance
-                            .collection('Courses')
-                            .doc('Course_01')
-                            .get(),
-                        builder: (context, snapshot) {
-                          if (snapshot.hasData && snapshot.data != null) {
-                            final documentData = snapshot.data!.data();
-                            final fieldValue = documentData!['content'];
-                            return Text(fieldValue);
-                          } else if (snapshot.hasError) {
-                            return Text(
-                                'Error retrieving document: ${snapshot.error}');
-                          } else {
-                            return const Text('Loading...');
-                          }
-                        },
+                      child: SingleChildScrollView(
+                        child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+                          future: FirebaseFirestore.instance
+                              .collection('Courses')
+                              .doc('Course_01')
+                              .get(),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData && snapshot.data != null) {
+                              final documentData = snapshot.data!.data();
+                              final fieldValue = documentData!['content'];
+                              return Text(fieldValue);
+                            } else if (snapshot.hasError) {
+                              return Text(
+                                  'Error retrieving document: ${snapshot.error}');
+                            } else {
+                              return const Text('Loading...');
+                            }
+                          },
+                        ),
                       ),
                     ),
                     // StreamBuilder(
