@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
@@ -21,23 +22,24 @@ class _Course_01State extends State<Course_01> {
   Widget build(BuildContext context) {
     return Expanded(
       child: GestureDetector(
-        child: FirebaseAnimatedList(
-          query: ref,
-          itemBuilder: (context, snapshot, animation, index) {
-            return ListTile(
-              title: Text(
-                snapshot.child('title').value.toString(),
-                style: const TextStyle(
-                  // color: appPrimaryColor,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
-                  fontSize: 20,
-                ),
-                textAlign: TextAlign.center,
-                textDirection: TextDirection.rtl,
-              ),
-            );
-          },
+        child: SingleChildScrollView(
+          child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+            future: FirebaseFirestore.instance
+                .collection('Courses')
+                .doc('Course_01')
+                .get(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData && snapshot.data != null) {
+                final documentData = snapshot.data!.data();
+                final fieldValue = documentData!['title'];
+                return Text(fieldValue);
+              } else if (snapshot.hasError) {
+                return Text('Error retrieving document: ${snapshot.error}');
+              } else {
+                return const Text('Loading...');
+              }
+            },
+          ),
         ),
         onTap: () {
           Navigator.push(

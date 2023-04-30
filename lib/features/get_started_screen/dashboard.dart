@@ -76,7 +76,7 @@ class DashboardScreen extends StatelessWidget {
                         color: appPrimaryColor,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Calibri',
-                        fontSize: 35,
+                        fontSize: mediaQuery.size.width * 0.09,
                       ),
                       textAlign: TextAlign.left,
                       textDirection: TextDirection.ltr,
