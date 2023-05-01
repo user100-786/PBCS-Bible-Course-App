@@ -73,13 +73,14 @@ class _Course_01_dataState extends State<Course_01_data> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.75,
+                height: MediaQuery.of(context).size.height * 0.78,
                 child: Column(
                   children: [
                     // Use the get() method to retrieve the document data
                     Expanded(
                       child: SingleChildScrollView(
-                        child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+                        child: FutureBuilder<
+                            DocumentSnapshot<Map<String, dynamic>>>(
                           future: FirebaseFirestore.instance
                               .collection('Courses')
                               .doc('Course_01')
@@ -88,12 +89,29 @@ class _Course_01_dataState extends State<Course_01_data> {
                             if (snapshot.hasData && snapshot.data != null) {
                               final documentData = snapshot.data!.data();
                               final fieldValue = documentData!['content'];
-                              return Text(fieldValue);
+                              return Text(
+                                fieldValue,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Gulzar-Regular',
+                                  fontSize: 12,
+                                ),
+                                textAlign: TextAlign.right,
+                                textDirection: TextDirection.rtl,
+                              );
                             } else if (snapshot.hasError) {
                               return Text(
                                   'Error retrieving document: ${snapshot.error}');
                             } else {
-                              return const Text('Loading...');
+                              return Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: const [
+                                    CircularProgressIndicator(),
+                                  ],
+                                ),
+                              );
                             }
                           },
                         ),

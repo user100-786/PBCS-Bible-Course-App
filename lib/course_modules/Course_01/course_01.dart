@@ -22,25 +22,38 @@ class _Course_01State extends State<Course_01> {
   Widget build(BuildContext context) {
     return Expanded(
       child: GestureDetector(
-        child: SingleChildScrollView(
-          child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
-            future: FirebaseFirestore.instance
-                .collection('Courses')
-                .doc('Course_01')
-                .get(),
-            builder: (context, snapshot) {
-              if (snapshot.hasData && snapshot.data != null) {
-                final documentData = snapshot.data!.data();
-                final fieldValue = documentData!['title'];
-                return Text(fieldValue);
-              } else if (snapshot.hasError) {
-                return Text('Error retrieving document: ${snapshot.error}');
-              } else {
-                return const Text('Loading...');
-              }
-            },
+        child: const Text(
+          'تورات، زبور اور صحیفۂ امبیاء کی شہادت',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
+            fontSize: 20,
           ),
+          textAlign: TextAlign.center,
+          textDirection: TextDirection.rtl,
         ),
+
+        // ****** Firestore code to reteive title from the DB
+        // child: SingleChildScrollView(
+        //   child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+        //     future: FirebaseFirestore.instance
+        //         .collection('Courses')
+        //         .doc('Course_01')
+        //         .get(),
+        //     builder: (context, snapshot) {
+        //       if (snapshot.hasData && snapshot.data != null) {
+        //         final documentData = snapshot.data!.data();
+        //         final fieldValue = documentData!['title'];
+        //         return Text(fieldValue);
+        //       } else if (snapshot.hasError) {
+        //         return Text('Error retrieving document: ${snapshot.error}');
+        //       } else {
+        //         return const CircularProgressIndicator();
+        //       }
+        //     },
+        //   ),
+        // ),
+
         onTap: () {
           Navigator.push(
             context,
