@@ -77,13 +77,36 @@ class _Course_01_dataState extends State<Course_01_data> {
                 child: Column(
                   children: [
                     // Use the get() method to retrieve the document data
+                    // Expanded(
+                    //   child: SingleChildScrollView(
+                    //     child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+                    //       future: FirebaseFirestore.instance
+                    //           .collection('Courses')
+                    //           .doc('Course_01')
+                    //           .get(),
+                    //       builder: (context, snapshot) {
+                    //         if (snapshot.hasData && snapshot.data != null) {
+                    //           final documentData = snapshot.data!.data();
+                    //           final fieldValue = documentData!['content'];
+                    //           return Text(fieldValue);
+                    //         } else if (snapshot.hasError) {
+                    //           return Text(
+                    //               'Error retrieving document: ${snapshot.error}');
+                    //         } else {
+                    //           return const Text('Loading...');
+                    //         }
+                    //       },
+                    //     ),
+                    //   ),
+                    // ),
                     Expanded(
                       child: SingleChildScrollView(
-                        child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
-                          future: FirebaseFirestore.instance
+                        child: StreamBuilder<
+                            DocumentSnapshot<Map<String, dynamic>>>(
+                          stream: FirebaseFirestore.instance
                               .collection('Courses')
                               .doc('Course_01')
-                              .get(),
+                              .snapshots(),
                           builder: (context, snapshot) {
                             if (snapshot.hasData && snapshot.data != null) {
                               final documentData = snapshot.data!.data();

@@ -23,11 +23,11 @@ class _Course_01State extends State<Course_01> {
     return Expanded(
       child: GestureDetector(
         child: SingleChildScrollView(
-          child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
-            future: FirebaseFirestore.instance
+          child: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+            stream: FirebaseFirestore.instance
                 .collection('Courses')
                 .doc('Course_01')
-                .get(),
+                .snapshots(),
             builder: (context, snapshot) {
               if (snapshot.hasData && snapshot.data != null) {
                 final documentData = snapshot.data!.data();
