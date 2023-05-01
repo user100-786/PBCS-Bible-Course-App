@@ -28,6 +28,7 @@ class _Course_01_dataState extends State<Course_01_data> {
   final CollectionReference = FirebaseFirestore.instance.collection("Courses");
   final documentRef =
       FirebaseFirestore.instance.collection('Courses').doc('Course_01');
+  late String _data;
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -44,7 +45,7 @@ class _Course_01_dataState extends State<Course_01_data> {
             color: Colors.white,
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Row(
                 children: [
@@ -79,12 +80,50 @@ class _Course_01_dataState extends State<Course_01_data> {
                     // Use the get() method to retrieve the document data
                     Expanded(
                       child: SingleChildScrollView(
-                        child: FutureBuilder<
+                        // child: FutureBuilder<
+                        //     DocumentSnapshot<Map<String, dynamic>>>(
+                        //   future: FirebaseFirestore.instance
+                        //       .collection('Courses')
+                        //       .doc('Course_01')
+                        //       .get(),
+                        //   builder: (context, snapshot) {
+                        //     if (snapshot.hasData && snapshot.data != null) {
+                        //       final documentData = snapshot.data!.data();
+                        //       final fieldValue = documentData!['content'];
+                        //       return Text(
+                        //         fieldValue,
+                        //         style: const TextStyle(
+                        //           fontWeight: FontWeight.bold,
+                        //           fontFamily: 'Gulzar-Regular',
+                        //           fontSize: 12,
+                        //         ),
+                        //         textAlign: TextAlign.right,
+                        //         textDirection: TextDirection.rtl,
+                        //       );
+                        //     } else if (snapshot.hasError) {
+                        //       return Text(
+                        //           'Error retrieving document: ${snapshot.error}');
+                        //     } else {
+                        //       return const Text('Loading...');
+                        //       // return Center(
+                        //       //   child: Column(
+                        //       //     mainAxisAlignment: MainAxisAlignment.center,
+                        //       //     crossAxisAlignment: CrossAxisAlignment.center,
+                        //       //     children: const [
+                        //       //       CircularProgressIndicator(),
+                        //       //     ],
+                        //       //   ),
+                        //       // );
+                        //     }
+                        //   },
+                        // ),
+
+                        child: StreamBuilder<
                             DocumentSnapshot<Map<String, dynamic>>>(
-                          future: FirebaseFirestore.instance
+                          stream: FirebaseFirestore.instance
                               .collection('Courses')
                               .doc('Course_01')
-                              .get(),
+                              .snapshots(),
                           builder: (context, snapshot) {
                             if (snapshot.hasData && snapshot.data != null) {
                               final documentData = snapshot.data!.data();
@@ -101,22 +140,57 @@ class _Course_01_dataState extends State<Course_01_data> {
                               );
                             } else if (snapshot.hasError) {
                               return Text(
-                                  'Error retrieving document: ${snapshot.error}');
+                                'Error retrieving document: ${snapshot.error}',
+                              );
                             } else {
                               return Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  // crossAxisAlignment: CrossAxisAlignment.center,
                                   children: const [
-                                    CircularProgressIndicator(),
+                                    Text("Loading..."),
                                   ],
                                 ),
                               );
                             }
                           },
                         ),
+                        // child: FutureBuilder<
+                        //     DocumentSnapshot<Map<String, dynamic>>>(
+                        //   future: FirebaseFirestore.instance
+                        //       .collection('Courses')
+                        //       .doc('Course_01')
+                        //       .get(),
+                        //   builder: (context, snapshot) {
+                        //     if (snapshot.hasData && snapshot.data != null) {
+                        //       final documentData = snapshot.data!.data();
+                        //       final fieldValue = documentData!['content'];
+                        //       _data = fieldValue;
+                        //       return Container();
+
+                        //       // style: const TextStyle(
+                        //       //   fontWeight: FontWeight.bold,
+                        //       //   fontFamily: 'Gulzar-Regular',
+                        //       //   fontSize: 12,
+                        //       // ),
+                        //       // textAlign: TextAlign.right,
+                        //       // textDirection: TextDirection.rtl,
+                        //     } else if (snapshot.hasError) {
+                        //       return Text(
+                        //           'Error retrieving document: ${snapshot.error}');
+                        //     } else {
+                        //       return const Text("Loading...");
+                        //     }
+                        //   },
+                        // ),
                       ),
                     ),
+
+                    // Expanded(
+                    //   child: SingleChildScrollView(
+                    //     child: Text(_data),
+                    //   ),
+                    // )
                   ],
                 ),
               )
