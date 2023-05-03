@@ -17,38 +17,88 @@ class Course_01 extends StatefulWidget {
 }
 
 class _Course_01State extends State<Course_01> {
-  DatabaseReference ref = FirebaseDatabase.instance.ref('/Course_01');
+  DatabaseReference ref = FirebaseDatabase.instance.ref('/Courses');
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: GestureDetector(
-        child: SingleChildScrollView(
-          child: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
-            stream: FirebaseFirestore.instance
-                .collection('Courses')
-                .doc('Course_01')
-                .snapshots(),
-            builder: (context, snapshot) {
-              if (snapshot.hasData && snapshot.data != null) {
-                final documentData = snapshot.data!.data();
-                final fieldValue = documentData!['title'];
-                return Text(fieldValue);
-              } else if (snapshot.hasError) {
-                return Text('Error retrieving document: ${snapshot.error}');
-              } else {
-                return const Text('Loading...');
-              }
-            },
-          ),
+        child: Text(
+          'AbC'
         ),
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => Course_01_data(),
-            ),
-          );
-        },
+        // child: SingleChildScrollView(
+        //   child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+        //     future: FirebaseFirestore.instance
+        //         .collection('Courses')
+        //         .doc('Course_01')
+        //         .get(),
+        //     builder: (context, snapshot) {
+        //       if (snapshot.hasData && snapshot.data != null) {
+        //         final documentData = snapshot.data!.data();
+        //         final fieldValue = documentData!['title'];
+        //         return Text(
+        //           fieldValue,
+        //           style: const TextStyle(
+        //             fontWeight: FontWeight.bold,
+        //             fontFamily: 'Gulzar-Regular',
+        //             fontSize: 12,
+        //           ),
+        //           textAlign: TextAlign.right,
+        //           textDirection: TextDirection.rtl,
+        //         );
+        //       } else if (snapshot.hasError) {
+        //         return Text('Error retrieving document: ${snapshot.error}');
+        //       } else {
+        //         return const Text('Loading...');
+        //       }
+        //     },
+        //   ),
+        // ),
+        // child: SingleChildScrollView(
+        //   child: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+        //     stream: FirebaseFirestore.instance
+        //         .collection('Courses')
+        //         .doc('Course_01')
+        //         .snapshots(),
+        //     builder: (context, snapshot) {
+        //       if (snapshot.hasData && snapshot.data != null) {
+        //         final documentData = snapshot.data!.data();
+        //         final fieldValue = documentData!['title'];
+        //         // return Text(fieldValue);
+        //         return Text(
+        //           fieldValue,
+        //           style: const TextStyle(
+        //             fontWeight: FontWeight.bold,
+        //             fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
+        //             fontSize: 25,
+        //           ),
+        //           textAlign: TextAlign.right,
+        //           textDirection: TextDirection.rtl,
+        //         );
+        //       } else if (snapshot.hasError) {
+        //         return Text('Error retrieving document: ${snapshot.error}');
+        //       } else {
+        //         return const Text('Loading...');
+        //         // return Center(
+        //         //   child: Column(
+        //         //     mainAxisAlignment: MainAxisAlignment.center,
+        //         //     crossAxisAlignment: CrossAxisAlignment.center,
+        //         //     children: const [
+        //         //       CircularProgressIndicator(),
+        //         //     ],
+        //         //   ),
+        //         // );
+        //       }
+        //     },
+        //   ),
+        // ),
+        // onTap: () {
+        //   Navigator.push(
+        //     context,
+        //     MaterialPageRoute(
+        //       builder: (context) => Course_01_data(),
+        //     ),
+        //   );
+        // },
       ),
     );
   }
