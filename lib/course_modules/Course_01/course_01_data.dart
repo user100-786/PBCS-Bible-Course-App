@@ -22,13 +22,12 @@ class Course_01_data extends StatefulWidget {
 }
 
 class _Course_01_dataState extends State<Course_01_data> {
-  DatabaseReference ref = FirebaseDatabase.instance.ref('/Course_01');
   final firestore =
       FirebaseFirestore.instance.collection("Courses").snapshots();
-  final CollectionReference = FirebaseFirestore.instance.collection("Courses");
-  final documentRef =
-      FirebaseFirestore.instance.collection('Courses').doc('Course_01');
-  late String _data;
+  DatabaseReference ref = FirebaseDatabase.instance.ref('/Course_01');
+  // final CollectionReference = FirebaseFirestore.instance.collection("Courses");
+  // final documentRef =
+  //     FirebaseFirestore.instance.collection('Courses').doc('Course_01');
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
