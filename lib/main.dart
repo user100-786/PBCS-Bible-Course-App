@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pbcs_bible_course/features/get_started_screen/sign_up_screen.dart';
+import 'course_modules/Course_01/audio_file_page.dart';
 import 'features/get_started_screen/first_screen.dart';
 import 'features/get_started_screen/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      home: AddAudioPage(),
       // home: const SignUpScreen(),
       // home: LoginScreen(),
     );
