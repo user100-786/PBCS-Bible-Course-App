@@ -68,7 +68,10 @@ class DashboardScreen extends StatelessWidget {
                     'assets/logo.png',
                     width: mediaQuery.size.width * 0.15,
                   ),
-                  const SizedBox(width: 20),
+                  // const Spacer(),
+                  const SizedBox(
+                    width: 20.0,
+                  ),
                   Expanded(
                     child: Text(
                       'Dashboard',
@@ -76,7 +79,7 @@ class DashboardScreen extends StatelessWidget {
                         color: appPrimaryColor,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Calibri',
-                        fontSize: mediaQuery.size.width * 0.09,
+                        fontSize: mediaQuery.size.width * 0.08,
                       ),
                       textAlign: TextAlign.left,
                       textDirection: TextDirection.ltr,

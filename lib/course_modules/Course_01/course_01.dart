@@ -22,9 +22,18 @@ class _Course_01State extends State<Course_01> {
   Widget build(BuildContext context) {
     return Expanded(
       child: GestureDetector(
-        child: Text(
-          'AbC'
+        child: const Text(
+          'تورات، زبور اور صحیفۂ امبیاء کی شہادت',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
+            fontSize: 20,
+          ),
+          textAlign: TextAlign.center,
+          textDirection: TextDirection.rtl,
         ),
+
+        // ****** Firestore code to reteive title from the DB
         // child: SingleChildScrollView(
         //   child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
         //     future: FirebaseFirestore.instance
@@ -35,70 +44,24 @@ class _Course_01State extends State<Course_01> {
         //       if (snapshot.hasData && snapshot.data != null) {
         //         final documentData = snapshot.data!.data();
         //         final fieldValue = documentData!['title'];
-        //         return Text(
-        //           fieldValue,
-        //           style: const TextStyle(
-        //             fontWeight: FontWeight.bold,
-        //             fontFamily: 'Gulzar-Regular',
-        //             fontSize: 12,
-        //           ),
-        //           textAlign: TextAlign.right,
-        //           textDirection: TextDirection.rtl,
-        //         );
+        //         return Text(fieldValue);
         //       } else if (snapshot.hasError) {
         //         return Text('Error retrieving document: ${snapshot.error}');
         //       } else {
-        //         return const Text('Loading...');
+        //         return const CircularProgressIndicator();
         //       }
         //     },
         //   ),
         // ),
-        // child: SingleChildScrollView(
-        //   child: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
-        //     stream: FirebaseFirestore.instance
-        //         .collection('Courses')
-        //         .doc('Course_01')
-        //         .snapshots(),
-        //     builder: (context, snapshot) {
-        //       if (snapshot.hasData && snapshot.data != null) {
-        //         final documentData = snapshot.data!.data();
-        //         final fieldValue = documentData!['title'];
-        //         // return Text(fieldValue);
-        //         return Text(
-        //           fieldValue,
-        //           style: const TextStyle(
-        //             fontWeight: FontWeight.bold,
-        //             fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
-        //             fontSize: 25,
-        //           ),
-        //           textAlign: TextAlign.right,
-        //           textDirection: TextDirection.rtl,
-        //         );
-        //       } else if (snapshot.hasError) {
-        //         return Text('Error retrieving document: ${snapshot.error}');
-        //       } else {
-        //         return const Text('Loading...');
-        //         // return Center(
-        //         //   child: Column(
-        //         //     mainAxisAlignment: MainAxisAlignment.center,
-        //         //     crossAxisAlignment: CrossAxisAlignment.center,
-        //         //     children: const [
-        //         //       CircularProgressIndicator(),
-        //         //     ],
-        //         //   ),
-        //         // );
-        //       }
-        //     },
-        //   ),
-        // ),
-        // onTap: () {
-        //   Navigator.push(
-        //     context,
-        //     MaterialPageRoute(
-        //       builder: (context) => Course_01_data(),
-        //     ),
-        //   );
-        // },
+
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Course_01_data(),
+            ),
+          );
+        },
       ),
     );
   }
