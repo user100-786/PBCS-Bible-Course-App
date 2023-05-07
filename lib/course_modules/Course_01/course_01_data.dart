@@ -6,12 +6,6 @@ import '../../constants/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-// class CourseInfo{
-//   final String title;
-//   final String content;
-//   CourseInfo({required this.title, required this.content});
-// }
-
 class Course_01_data extends StatefulWidget {
   final auth = FirebaseAuth.instance;
   FirebaseDatabase database = FirebaseDatabase.instance;

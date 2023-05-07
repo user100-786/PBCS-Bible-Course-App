@@ -109,13 +109,13 @@ class CoursesScreen extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => Course_01_data(),
-            ),
-          );
-        },
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Course_01_data(),
+                    ),
+                  );
+                },
               ),
               const Spacer(),
               Container(
