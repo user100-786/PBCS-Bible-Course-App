@@ -102,7 +102,7 @@ class CoursesScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // Text('Hello'),
-                    Course_01(),
+                    Course01(),
                   ],
                 ),
               ),
