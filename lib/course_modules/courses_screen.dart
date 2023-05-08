@@ -114,8 +114,16 @@ class CoursesScreen extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (context) => Course_01_data(),
                     ),
-                  );
-                },
+                  ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    // Text('Hello'),
+                    Course01(),
+                  ],
+                ),
               ),
               const Spacer(),
               Container(

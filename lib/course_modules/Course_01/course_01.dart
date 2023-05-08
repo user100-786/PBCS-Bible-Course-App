@@ -1,57 +1,90 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:just_audio/just_audio.dart' as audio;
 
 import 'course_01_data.dart';
 
-class Course_01 extends StatefulWidget {
-  final auth = FirebaseAuth.instance;
-  FirebaseDatabase database = FirebaseDatabase.instance;
-
-  Course_01({super.key});
+class Course01 extends StatefulWidget {
+  Course01({Key? key}) : super(key: key);
 
   @override
-  State<Course_01> createState() => _Course_01State();
+  _Course01State createState() => _Course01State();
 }
 
-class _Course_01State extends State<Course_01> {
-  DatabaseReference ref = FirebaseDatabase.instance.ref('/Courses');
+class _Course01State extends State<Course01> {
+  late final audio.AudioPlayer _audioPlayer;
+  bool _isPlaying = false;
+
+  final _auth = FirebaseAuth.instance;
+  final _database = FirebaseDatabase.instance;
+  final _storage = FirebaseStorage.instance;
+
+  final _audioRef =
+      FirebaseStorage.instance.ref().child('audio/1.2 taruf paragraph.mp3');
+  final _dbRef = FirebaseDatabase.instance.ref('/Course_01');
+
+  @override
+  void initState() {
+    super.initState();
+    _audioPlayer = audio.AudioPlayer();
+  }
+
+  @override
+  void dispose() {
+    _audioPlayer.dispose();
+    super.dispose();
+  }
+
+  Future<void> _playAudioFromFirebase() async {
+    setState(() {
+      _isPlaying = !_isPlaying;
+      if (_isPlaying) {
+        _audioPlayer.play();
+      } else {
+        _audioPlayer.pause();
+      }
+    });
+
+    try {
+      final audioUrl = await _audioRef.getDownloadURL();
+      await _audioPlayer.setUrl(audioUrl);
+      _audioPlayer.play();
+      setState(() {
+        _isPlaying = true;
+      });
+    } catch (error) {
+      print('Failed to play audio: $error');
+      Fluttertoast.showToast(
+        msg: 'Failed to play audio: $error',
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 3,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0,
+      );
+    }
+  }
+
+  void _togglePlayPause() {
+    setState(() {
+      _isPlaying = !_isPlaying;
+      if (_isPlaying) {
+        _audioPlayer.play();
+      } else {
+        _audioPlayer.pause();
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: GestureDetector(
-        child: const Text(
-          'خُدا تعالیٰ کی وفاداری',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
-            fontSize: 20,
-          ),
-          textAlign: TextAlign.center,
-          textDirection: TextDirection.rtl,
-        ),
-
-        // ****** Firestore code to reteive title from the DB
-        // child: SingleChildScrollView(
-        //   child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
-        //     future: FirebaseFirestore.instance
-        //         .collection('Courses')
-        //         .doc('Course_01')
-        //         .get(),
-        //     builder: (context, snapshot) {
-        //       if (snapshot.hasData && snapshot.data != null) {
-        //         final documentData = snapshot.data!.data();
-        //         final fieldValue = documentData!['title'];
-        //         return Text(fieldValue);
-        //       } else if (snapshot.hasError) {
-        //         return Text('Error retrieving document: ${snapshot.error}');
-        //       } else {
-        //         return const CircularProgressIndicator();
-        //       }
-        //     },
-        //   ),
-        // ),
-
         onTap: () {
           Navigator.push(
             context,
@@ -60,87 +93,29 @@ class _Course_01State extends State<Course_01> {
             ),
           );
         },
+        child: Row(
+          children: [
+            const Spacer(
+              flex: 3,
+            ),
+            const Text(
+              'خُدا تعالیٰ کی وفاداری',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
+                fontSize: 20,
+              ),
+              textAlign: TextAlign.center,
+              textDirection: TextDirection.rtl,
+            ),
+            const Spacer(),
+            IconButton(
+              icon: Icon(_isPlaying ? Icons.pause : Icons.play_arrow),
+              onPressed: _playAudioFromFirebase,
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:firebase_database/firebase_database.dart';
-// import 'package:firebase_database/ui/firebase_animated_list.dart';
-// import 'package:flutter/material.dart';
-
-// import 'course_01_data.dart';
-
-// class Course_01 extends StatefulWidget {
-//   final auth = FirebaseAuth.instance;
-//   FirebaseDatabase database = FirebaseDatabase.instance;
-
-//   Course_01({super.key});
-
-//   @override
-//   State<Course_01> createState() => _Course_01State();
-// }
-
-// class _Course_01State extends State<Course_01> {
-//   DatabaseReference ref = FirebaseDatabase.instance.ref('/Course_01');
-
-//   late FirebaseFirestore _firestore;
-//   late CollectionReference _collectionRef;
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     _firestore = FirebaseFirestore.instance;
-//     _collectionRef = _firestore.collection('myCollection');
-//   }
-
-//   Future<void> _addDocument() async {
-//     try {
-//       await _collectionRef.doc('myDocument').set({
-//         'field1': 'value1',
-//         'field2': 'value2',
-//       });
-//       print('Document added');
-//     } catch (e) {
-//       print('Error adding document: $e');
-//     }
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Expanded(
-//       child: GestureDetector(
-//         child: SingleChildScrollView(
-//           child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
-//             future: FirebaseFirestore.instance
-//                 .collection('Courses')
-//                 .doc('Course_01')
-//                 .get(),
-//             builder: (context, snapshot) {
-//               if (snapshot.hasData && snapshot.data != null) {
-//                 final documentData = snapshot.data!.data();
-//                 final fieldValue = documentData!['title'];
-//                 return Text(fieldValue);
-//               } else if (snapshot.hasError) {
-//                 return Text('Error retrieving document: ${snapshot.error}');
-//               } else {
-//                 return const CircularProgressIndicator();
-//               }
-//             },
-//           ),
-//         ),
-//         onTap: () {
-//           _addDocument(); // call the function to add document to Firestore
-//           Navigator.push(
-//             context,
-//             MaterialPageRoute(
-//               builder: (context) => Course_01_data(),
-//             ),
-//           );
-//         },
-//       ),
-//     );
-//   }
-// }

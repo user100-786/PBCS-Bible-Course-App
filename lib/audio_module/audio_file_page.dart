@@ -34,12 +34,14 @@ class _AddAudioPageState extends State<AddAudioPage> {
       await audioRef.putFile(_audioFile!);
 
       // Get the download URL for the audio file
-      String audioUrl = await audioRef.getDownloadURL();
 
-      // Add the download URL for the audio file to Firestore
-      DocumentReference docRef =
-          FirebaseFirestore.instance.collection('Courses').doc('Course_01');
-      await docRef.set({'audio_one': audioUrl}, SetOptions(merge: true));
+      // String audioUrl = await audioRef.getDownloadURL();
+
+      // // Add the download URL for the audio file to Firestore
+
+      // DocumentReference docRef =
+      //     FirebaseFirestore.instance.collection('Courses').doc('Course_01');
+      // await docRef.set({'audio_one': audioUrl}, SetOptions(merge: true));
 
       ScaffoldMessenger.of(context as BuildContext).showSnackBar(
           const SnackBar(content: Text('Audio added to Firestore')));
