@@ -21,7 +21,7 @@ class _Course_02State extends State<Course_02> {
     return Expanded(
       child: GestureDetector(
         child: const Text(
-          'خُدا تعالیٰ کی وفاداری',
+          'تورات، زبور اور صحیفۂ امبیاء کی شہادت',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontFamily: 'Jameel Noori Nastaleeq Kasheeda',

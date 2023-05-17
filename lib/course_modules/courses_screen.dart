@@ -127,10 +127,7 @@ class CoursesScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    // Image.asset(
-                    //   'assets/sun_logo.png',
-                    //   width: mediaQuery.size.width * 0.5,
-                    // ),
+                    Course_02(),
                   ],
                 ),
               ),
