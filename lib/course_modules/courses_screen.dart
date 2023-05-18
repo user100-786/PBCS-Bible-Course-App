@@ -104,7 +104,7 @@ class CoursesScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       // Text('Hello'),
-                      Course_01(),
+                      Course01(),
                     ],
                   ),
                 ),
@@ -114,17 +114,17 @@ class CoursesScreen extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (context) => Course_01_data(),
                     ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    // Text('Hello'),
-                    Course01(),
-                  ],
-                ),
+                  );
+                },
               ),
+              // child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.center,
+              //     crossAxisAlignment: CrossAxisAlignment.center,
+              //     children: [
+              //       // Text('Hello'),
+              //       Course01(),
+              //     ],
+              //   ),
               const Spacer(),
               Container(
                 padding: const EdgeInsets.all(20.0),
@@ -142,16 +142,16 @@ class CoursesScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    // Image.asset(
-                    //   'assets/sun_logo.png',
-                    //   width: mediaQuery.size.width * 0.5,
-                    // ),
-                  ],
-                ),
+                // child: Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   crossAxisAlignment: CrossAxisAlignment.stretch,
+                //   children: [
+                //     // Image.asset(
+                //     //   'assets/sun_logo.png',
+                //     //   width: mediaQuery.size.width * 0.5,
+                //     // ),
+                //   ],
+                // ),
               ),
               const Spacer(),
               Container(
