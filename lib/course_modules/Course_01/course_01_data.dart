@@ -7,11 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 
-// class CourseInfo{
-//   final String title;
-//   final String content;
-//   CourseInfo({required this.title, required this.content});
-// }
+
 
 class Course_01_data extends StatefulWidget {
   final auth = FirebaseAuth.instance;
@@ -85,37 +81,7 @@ class _Course_01_dataState extends State<Course_01_data> {
 
     return Scaffold(
       backgroundColor: appPrimaryColor,
-      // body: _pdfPath != null
-      //     ? PDFView(
-      //         filePath: _pdfPath!,
-      //         onPageChanged: (int? page, int? total) {
-      //           setState(() {
-      //             _currentPage = page!;
-      //             _pages = total!;
-      //           });
-      //         },
-      //         onRender: (_pages) {},
-      //         onError: (error) {
-      //           print(error);
-      //           // Handle error while loading PDF
-      //           showDialog(
-      //             context: context,
-      //             builder: (context) => AlertDialog(
-      //               title: const Text('Error'),
-      //               content: Text('Failed to load PDF: $error'),
-      //               actions: [
-      //                 TextButton(
-      //                   onPressed: () {
-      //                     Navigator.pop(context);
-      //                   },
-      //                   child: const Text('OK'),
-      //                 ),
-      //               ],
-      //             ),
-      //           );
-      //         },
-      //       )
-      //     : const Center(child: CircularProgressIndicator()));
+     
       body: Center(
         child: Container(
           padding: const EdgeInsets.all(20.0),
@@ -194,11 +160,7 @@ class _Course_01_dataState extends State<Course_01_data> {
                           : const Center(child: CircularProgressIndicator()),
                     ),
 
-                    // Expanded(
-                    //   child: SingleChildScrollView(
-                    //     child: Text(_data),
-                    //   ),
-                    // )
+                  
                   ],
                 ),
               )
