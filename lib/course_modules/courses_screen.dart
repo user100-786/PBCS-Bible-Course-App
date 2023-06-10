@@ -142,16 +142,13 @@ class CoursesScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                // child: Row(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-                //   crossAxisAlignment: CrossAxisAlignment.stretch,
-                //   children: [
-                //     // Image.asset(
-                //     //   'assets/sun_logo.png',
-                //     //   width: mediaQuery.size.width * 0.5,
-                //     // ),
-                //   ],
-                // ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Course_02(),
+                  ],
+                ),
               ),
               const Spacer(),
               Container(

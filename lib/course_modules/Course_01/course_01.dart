@@ -96,8 +96,8 @@ class _Course01State extends State<Course01> {
         child: Row(
           children: [
             const Spacer(
-              flex: 3,
-            ),
+                // flex: 3,
+                ),
             const Text(
               'خُدا تعالیٰ کی وفاداری',
               style: TextStyle(
@@ -109,10 +109,10 @@ class _Course01State extends State<Course01> {
               textDirection: TextDirection.rtl,
             ),
             const Spacer(),
-            IconButton(
-              icon: Icon(_isPlaying ? Icons.pause : Icons.play_arrow),
-              onPressed: _playAudioFromFirebase,
-            ),
+            // IconButton(
+            //   icon: Icon(_isPlaying ? Icons.pause : Icons.play_arrow),
+            //   onPressed: _playAudioFromFirebase,
+            // ),
           ],
         ),
       ),
