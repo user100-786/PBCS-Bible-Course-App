@@ -7,7 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 
-
+import '../model_bottom_sheet/bottom_sheet.dart';
 
 class Course_01_data extends StatefulWidget {
   final auth = FirebaseAuth.instance;
@@ -81,7 +81,6 @@ class _Course_01_dataState extends State<Course_01_data> {
 
     return Scaffold(
       backgroundColor: appPrimaryColor,
-     
       body: Center(
         child: Container(
           padding: const EdgeInsets.all(20.0),
@@ -115,13 +114,16 @@ class _Course_01_dataState extends State<Course_01_data> {
                   ),
                 ],
               ),
+
+              // add the elevatedButton in the column
+
               const SizedBox(
                 height: 20,
                 width: 20,
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.78,
+                height: MediaQuery.of(context).size.height * 0.8,
                 child: Column(
                   children: [
                     // Use the get() method to retrieve the document data
@@ -160,7 +162,14 @@ class _Course_01_dataState extends State<Course_01_data> {
                           : const Center(child: CircularProgressIndicator()),
                     ),
 
-                  
+                    // const SizedBox(
+                    //   height: 10,
+                    //   width: 10,
+                    // ),
+
+                    // add the elevatedButton
+
+                    const ModelBottomSheet(),
                   ],
                 ),
               )
