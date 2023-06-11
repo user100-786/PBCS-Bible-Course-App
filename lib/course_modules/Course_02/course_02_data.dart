@@ -2,6 +2,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:pbcs_bible_course/course_modules/model_bottom_sheet/bottom_sheet.dart';
 import '../../constants/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -118,7 +119,7 @@ class _Course_02_dataState extends State<Course_02_data> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.78,
+                height: MediaQuery.of(context).size.height * 0.80,
                 child: Column(
                   children: [
                     // Use the get() method to retrieve the document data
@@ -135,7 +136,7 @@ class _Course_02_dataState extends State<Course_02_data> {
                               },
                               onRender: (_pages) {},
                               onError: (error) {
-                                print(error);
+                                // print(error);
                                 // Handle error while loading PDF
                                 showDialog(
                                   context: context,
@@ -156,6 +157,8 @@ class _Course_02_dataState extends State<Course_02_data> {
                             )
                           : const Center(child: CircularProgressIndicator()),
                     ),
+
+                    const ModelBottomSheet(),
                   ],
                 ),
               )
