@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/colors.dart';
+import '../Course_01/course_01_audio.dart';
 
 class ModelBottomSheet extends StatefulWidget {
   const ModelBottomSheet({super.key});
@@ -20,11 +21,12 @@ class _ModelBottomSheetState extends State<ModelBottomSheet> {
             borderRadius: BorderRadius.circular(20.0),
           ),
           builder: (context) => Container(
-            padding: const EdgeInsets.all(30.0),
-            child: const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text('Audio Files here...')],
-            ),
+            padding: const EdgeInsets.all(10),
+            child: const Course01Audio(),
+            // child: const Column(
+            //   crossAxisAlignment: CrossAxisAlignment.start,
+            //   children: [Text('Audio Files here...')],
+            // ),
           ),
         );
       },
@@ -32,11 +34,10 @@ class _ModelBottomSheetState extends State<ModelBottomSheet> {
         backgroundColor: appPrimaryColor,
         foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(32.0),
+          borderRadius: BorderRadius.circular(30.0),
         ),
       ),
       child: const Text('Listen in Audio'),
-      //const Text('Listen in Audio'),
     );
   }
 }

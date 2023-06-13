@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:pbcs_bible_course/constants/colors.dart';
 import 'package:pbcs_bible_course/course_modules/Course_01/course_01.dart';
 import 'package:pbcs_bible_course/features/get_started_screen/sign_up_screen.dart';
 import 'audio_module/audio_file_page.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: MaterialPrimaryColor,
       ),
       // home: const FirstScreen(),
       home: CoursesScreen(),
