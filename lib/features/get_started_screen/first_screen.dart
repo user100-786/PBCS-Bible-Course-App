@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pbcs_bible_course/course_modules/courses_screen.dart';
+// import 'package:pbcs_bible_course/course_modules/courses_screen.dart';
 import 'package:pbcs_bible_course/features/get_started_screen/login_screen.dart';
 import '../../constants/colors.dart';
 import 'dashboard.dart';

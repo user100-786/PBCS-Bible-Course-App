@@ -127,40 +127,73 @@ class _Course_01_dataState extends State<Course_01_data> {
                 child: Column(
                   children: [
                     // Use the get() method to retrieve the document data
-                    Expanded(
-                      child: _pdfPath != null
-                          ? PDFView(
-                              filePath: _pdfPath!,
-                              autoSpacing: false,
-                              onPageChanged: (int? page, int? total) {
-                                setState(() {
-                                  _currentPage = page!;
-                                  _pages = total!;
-                                });
-                              },
-                              onRender: (_pages) {},
-                              onError: (error) {
-                                print(error);
-                                // Handle error while loading PDF
-                                showDialog(
-                                  context: context,
-                                  builder: (context) => AlertDialog(
-                                    title: const Text('Error'),
-                                    content: Text('Failed to load PDF: $error'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () {
-                                          Navigator.pop(context);
-                                        },
-                                        child: const Text('OK'),
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              },
-                            )
-                          : const Center(child: CircularProgressIndicator()),
-                    ),
+                    // Expanded(
+                    //   child: SingleChildScrollView(
+                    //     child: FutureBuilder<
+                    //         DocumentSnapshot<Map<String, dynamic>>>(
+                    //       future: FirebaseFirestore.instance
+                    //           .collection('Courses')
+                    //           .doc('Course_01')
+                    //           .get(),
+                    //       builder: (context, snapshot) {
+                    //         if (snapshot.hasData && snapshot.data != null) {
+                    //           final documentData = snapshot.data!.data();
+                    //           final fieldValue = documentData!['content'];
+                    //           return Text(
+                    //             fieldValue,
+                    //             style: const TextStyle(
+                    //               fontWeight: FontWeight.bold,
+                    //               fontFamily: 'Gulzar-Regular',
+                    //               fontSize: 12,
+                    //             ),
+                    //             textAlign: TextAlign.right,
+                    //             textDirection: TextDirection.rtl,
+                    //           );
+                    //         } else if (snapshot.hasError) {
+                    //           return Text(
+                    //               'Error retrieving document: ${snapshot.error}');
+                    //         } else {
+                    //           return const Text('Loading...');
+                    //         }
+                    //       },
+                    //     ),
+                    //   ),
+                    // ),
+
+                    // Expanded(
+                    //   child: _pdfPath != null
+                    //       ? PDFView(
+                    //           filePath: _pdfPath!,
+                    //           autoSpacing: false,
+                    //           onPageChanged: (int? page, int? total) {
+                    //             setState(() {
+                    //               _currentPage = page!;
+                    //               _pages = total!;
+                    //             });
+                    //           },
+                    //           onRender: (_pages) {},
+                    //           onError: (error) {
+                    //             print(error);
+                    //             // Handle error while loading PDF
+                    //             showDialog(
+                    //               context: context,
+                    //               builder: (context) => AlertDialog(
+                    //                 title: const Text('Error'),
+                    //                 content: Text('Failed to load PDF: $error'),
+                    //                 actions: [
+                    //                   TextButton(
+                    //                     onPressed: () {
+                    //                       Navigator.pop(context);
+                    //                     },
+                    //                     child: const Text('OK'),
+                    //                   ),
+                    //                 ],
+                    //               ),
+                    //             );
+                    //           },
+                    //         )
+                    //       : const Center(child: CircularProgressIndicator()),
+                    // ),
 
                     // const SizedBox(
                     //   height: 10,

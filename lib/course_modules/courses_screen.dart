@@ -7,6 +7,7 @@ import 'package:pbcs_bible_course/features/get_started_screen/login_screen.dart'
 import 'package:pbcs_bible_course/utils/utils.dart';
 import '../../constants/colors.dart';
 import 'Course_01/course_01.dart';
+import 'Course_01/course_01_data.dart';
 import 'Course_02/course_02.dart';
 
 class CoursesScreen extends StatelessWidget {
@@ -81,31 +82,49 @@ class CoursesScreen extends StatelessWidget {
                 ],
               ),
               const Spacer(),
-              Container(
-                padding: const EdgeInsets.all(20.0),
-                width: mediaQuery.size.width * 0.9,
-                height: mediaQuery.size.height * 0.15,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(32),
-                  color: tSecondaryColor,
-                  boxShadow: [
-                    BoxShadow(
-                      color: tSecondaryColor,
-                      spreadRadius: 5,
-                      blurRadius: 15,
+              GestureDetector(
+                child: Container(
+                  padding: const EdgeInsets.all(20.0),
+                  width: mediaQuery.size.width * 0.9,
+                  height: mediaQuery.size.height * 0.15,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(32),
+                    color: tSecondaryColor,
+                    boxShadow: [
+                      BoxShadow(
+                        color: tSecondaryColor,
+                        spreadRadius: 5,
+                        blurRadius: 15,
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      // Text('Hello'),
+                      Course01(),
+                    ],
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Course_01_data(),
                     ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    // Text('Hello'),
-                    Course01(),
-                  ],
-                ),
+                  );
+                },
               ),
+              // child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.center,
+              //     crossAxisAlignment: CrossAxisAlignment.center,
+              //     children: [
+              //       // Text('Hello'),
+              //       Course01(),
+              //     ],
+              //   ),
               const Spacer(),
               Container(
                 padding: const EdgeInsets.all(20.0),

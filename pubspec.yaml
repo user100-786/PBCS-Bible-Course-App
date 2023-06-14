@@ -51,6 +51,7 @@ flutter:
   - assets/courses.png
   - assets/quiz.png
   - assets/analytics.png
+  - assets/audio.mp3
   #   - images/a_dot_ham.jpeg
 
  
@@ -66,4 +67,3 @@ flutter:
         - asset: assets/fonts/Gulzar-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-
