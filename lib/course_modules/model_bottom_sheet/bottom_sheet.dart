@@ -21,7 +21,7 @@ class _ModelBottomSheetState extends State<ModelBottomSheet> {
             borderRadius: BorderRadius.circular(20.0),
           ),
           builder: (context) => Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.fromLTRB(0,30,0,30),
             child: const Course01Audio(),
             // child: const Column(
             //   crossAxisAlignment: CrossAxisAlignment.start,

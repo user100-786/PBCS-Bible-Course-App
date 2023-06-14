@@ -101,7 +101,6 @@
 //   }
 // }
 
-
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import '../../constants/colors.dart';
@@ -134,6 +133,9 @@ class _Course01AudioState extends State<Course01Audio> {
     AudioFile(filePath: 'audio.mp3', label: 'Audio 1 Label'),
     AudioFile(filePath: 'audio.mp3', label: 'Audio 2 Label'),
     AudioFile(filePath: 'audio.mp3', label: 'Audio 3 Label'),
+    AudioFile(filePath: 'audio.mp3', label: 'Audio 4 Label'),
+    AudioFile(filePath: 'audio.mp3', label: 'Audio 5 Label'),
+    AudioFile(filePath: 'audio.mp3', label: 'Audio 6 Label'),
   ];
 
   @override
@@ -183,30 +185,45 @@ class _Course01AudioState extends State<Course01Audio> {
           itemCount: audioFiles.length,
           itemBuilder: (BuildContext context, int index) {
             final audioFile = audioFiles[index];
-            return Column(
-              children: [
-                Text(audioFile.label),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CircleAvatar(
-                      radius: 20,
-                      child: IconButton(
-                        icon: Icon(
-                          isPlayingList[index]
-                              ? Icons.pause
-                              : Icons.play_arrow,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            playAudio(index);
-                          });
-                        },
-                      ),
+            return Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+                side: const BorderSide(
+                  color: Colors.grey,
+                  width: 0.2,
+                ),
+              ),
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundColor: MaterialPrimaryColor,
+                  child: IconButton(
+                    icon: Icon(
+                      isPlayingList[index] ? Icons.pause : Icons.play_arrow,
                     ),
-                    const SizedBox(width: 10),
-                    Text(formatTime(positionList[index].inSeconds)),
+                    color: Colors.white,
+                    onPressed: () {
+                      setState(() {
+                        playAudio(index);
+                      });
+                    },
+                  ),
+                ),
+                title: Center(
+                  child: Text(
+                    audioFile.label,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 5),
                     Slider(
+                      activeColor: MaterialPrimaryColor,
+                      inactiveColor: MaterialPrimaryColor.withOpacity(0.5),
                       min: 0,
                       max: durationList[index].inSeconds.toDouble(),
                       value: positionList[index].inSeconds.toDouble(),
@@ -215,12 +232,58 @@ class _Course01AudioState extends State<Course01Audio> {
                         players[index].seek(position);
                       },
                     ),
-                    Text(formatTime(
-                        (durationList[index] - positionList[index]).inSeconds)),
+                    const SizedBox(height: 5),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(formatTime(positionList[index].inSeconds)),
+                        Text(formatTime(
+                            (durationList[index] - positionList[index])
+                                .inSeconds)),
+                      ],
+                    ),
                   ],
                 ),
-              ],
+              ),
             );
+            // return Column(
+            //   children: [
+            //     Text(audioFile.label),
+            //     Row(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //         CircleAvatar(
+            //           radius: 20,
+            //           child: IconButton(
+            //             icon: Icon(
+            //               isPlayingList[index]
+            //                   ? Icons.pause
+            //                   : Icons.play_arrow,
+            //             ),
+            //             onPressed: () {
+            //               setState(() {
+            //                 playAudio(index);
+            //               });
+            //             },
+            //           ),
+            //         ),
+            //         const SizedBox(width: 10),
+            //         Text(formatTime(positionList[index].inSeconds)),
+            //         Slider(
+            //           min: 0,
+            //           max: durationList[index].inSeconds.toDouble(),
+            //           value: positionList[index].inSeconds.toDouble(),
+            //           onChanged: (value) {
+            //             final position = Duration(seconds: value.toInt());
+            //             players[index].seek(position);
+            //           },
+            //         ),
+            //         Text(formatTime(
+            //             (durationList[index] - positionList[index]).inSeconds)),
+            //       ],
+            //     ),
+            //   ],
+            // );
           },
         ),
       ),
