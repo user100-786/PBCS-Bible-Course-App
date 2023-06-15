@@ -1,4 +1,3 @@
-
 // Please don't delete commented code in this file it will be helpfull in fluture, Thanks
 
 // import 'package:flutter/material.dart';
@@ -90,21 +89,53 @@ class _MyPdfViewerState extends State<MyPdfViewer> {
   String? _pdfUrl;
   final firestore = FirebaseFirestore.instance.collection("Courses");
 
+  late int i;
+
   @override
   void initState() {
     super.initState();
-    getPdf();
+    // for (i; i < 10; i++) {
+    //   this.i = i;
+    storeAudios();
+    // }
   }
 
-  Future<void> getPdf() async {
+  storeAudios() {
+    for (int i = 0; i <= 10; i++) {
+      getPdf(i);
+    }
+  }
+
+  // Future<void> getPdf() async {
+  //   try {
+  //     final ref = FirebaseStorage.instance
+  //         .ref()
+  //         .child('/courses/course_02/Faithfulness of God Part-2.pdf');
+  //     final url = await ref.getDownloadURL();
+  //     _pdfUrl = url;
+  //     // Store the PDF link in Firestore
+  //     await firestore.doc('Course_01').set({'pdf_02': _pdfUrl});
+  //     setState(() {});
+  //   } catch (error) {
+  //     Fluttertoast.showToast(
+  //       msg: 'Error: $_pdfUrl',
+  //       toastLength: Toast.LENGTH_SHORT,
+  //       gravity: ToastGravity.CENTER,
+  //       timeInSecForIosWeb: 5,
+  //       backgroundColor: Colors.red,
+  //       textColor: Colors.white,
+  //       fontSize: 16.0,
+  //     );
+  //   }
+  // }
+
+  Future<void> getPdf(int i) async {
     try {
-      final ref = FirebaseStorage.instance
-          .ref()
-          .child('/courses/course_02/Faithfulness of God Part-2.pdf');
+      final ref = FirebaseStorage.instance.ref().child('/audios/$i.mp3');
       final url = await ref.getDownloadURL();
       _pdfUrl = url;
       // Store the PDF link in Firestore
-      await firestore.doc('Course_01').set({'pdf_02': _pdfUrl});
+      await firestore.doc('Audio_$i').set({'link': _pdfUrl});
       setState(() {});
     } catch (error) {
       Fluttertoast.showToast(
@@ -118,7 +149,7 @@ class _MyPdfViewerState extends State<MyPdfViewer> {
       );
     }
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
