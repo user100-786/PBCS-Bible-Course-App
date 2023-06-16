@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:pbcs_bible_course/course_modules/Course_02/course_part1_and_part2_screen.dart';
 
-import 'course_02_data.dart';
+import 'course_02_part01_data.dart';
 
 class Course_02 extends StatefulWidget {
   final auth = FirebaseAuth.instance;
@@ -21,7 +22,7 @@ class _Course_02State extends State<Course_02> {
     return Expanded(
       child: GestureDetector(
         child: const Text(
-          'تورات، زبور اور صحیفۂ امبیاء کی شہادت',
+          'خُدا تعالیٰ کی وفاداری',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
@@ -56,7 +57,7 @@ class _Course_02State extends State<Course_02> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => Course_02_data(),
+              builder: (context) => CourseTwoPartsPage(),
             ),
           );
         },

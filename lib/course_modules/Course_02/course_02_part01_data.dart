@@ -8,18 +8,22 @@ import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 
-class Course_02_data extends StatefulWidget {
+class Course_02_part01_data extends StatefulWidget {
   final auth = FirebaseAuth.instance;
   FirebaseDatabase database = FirebaseDatabase.instance;
-  Course_02_data({super.key});
+  Course_02_part01_data({super.key});
   final String pdfUrl =
-      "https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/courses%2Fcourse_02%2FFaithfulness%20of%20God%20Part-2.pdf?alt=media&token=1c42c788-23fe-4e81-be56-560c111d67a7";
+      // Course 2 part one url
+      "https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/courses%2Fcourse_01%2FFaithfulness%20of%20God%20Part-1.pdf?alt=media&token=ec7af450-9bc7-4539-b375-1a5e087437c1";
+
+  // Course 2 part two url
+  // "https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/courses%2Fcourse_02%2FFaithfulness%20of%20God%20Part-2.pdf?alt=media&token=1c42c788-23fe-4e81-be56-560c111d67a7";
 
   @override
-  State<Course_02_data> createState() => _Course_02_dataState();
+  State<Course_02_part01_data> createState() => _Course_02_part01_dataState();
 }
 
-class _Course_02_dataState extends State<Course_02_data> {
+class _Course_02_part01_dataState extends State<Course_02_part01_data> {
   // Start of loading pdf file.......
 
   int _pages = 0;
@@ -32,40 +36,6 @@ class _Course_02_dataState extends State<Course_02_data> {
     _downloadPdf();
     // _loadFromFirebase();
   }
-
-// load pdf file into firebase storage and than store the link into firebase firestore
-  // Future<void> _loadFromFirebase() async {
-  //   final storage = FirebaseStorage.instance;
-  //   final ref = storage
-  //       .ref()
-  //       .child('/courses/course_02/Faithfulness of God Part-2.pdf');
-  //   final url = await ref.getDownloadURL();
-
-  //   setState(() {
-  //     _pdfUrl = url;
-  //     _isLoading = false;
-  //   });
-  //   storePdfUrlInFirestore(url);
-  // }
-
-  // Future<void> storePdfUrlInFirestore(String pdfUrl) async {
-  //   try {
-  //     final firestore = FirebaseFirestore.instance;
-  //     final documentReference =
-  //         firestore.collection('Courses').doc('Course_02');
-
-  //     await documentReference.set({'pdf_02': pdfUrl});
-  //     print('PDF URL stored in Firestore successfully.');
-  //   } catch (error) {
-  //     print('Error storing PDF URL in Firestore: $error');
-  //   }
-  // }
-
-  // Ending of loading pdf file.......
-
-  // final firestore =
-  //     FirebaseFirestore.instance.collection("Courses").snapshots();
-  // DatabaseReference ref = FirebaseDatabase.instance.ref('/Course_01');
 
   Future<void> _downloadPdf() async {
     final pdfFile = await DefaultCacheManager().getSingleFile(widget.pdfUrl);

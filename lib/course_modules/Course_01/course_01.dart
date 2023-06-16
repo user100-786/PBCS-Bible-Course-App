@@ -93,27 +93,15 @@ class _Course01State extends State<Course01> {
             ),
           );
         },
-        child: Row(
-          children: [
-            const Spacer(
-                // flex: 3,
-                ),
-            const Text(
-              'خُدا تعالیٰ کی وفاداری',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
-                fontSize: 20,
-              ),
-              textAlign: TextAlign.center,
-              textDirection: TextDirection.rtl,
-            ),
-            const Spacer(),
-            // IconButton(
-            //   icon: Icon(_isPlaying ? Icons.pause : Icons.play_arrow),
-            //   onPressed: _playAudioFromFirebase,
-            // ),
-          ],
+        child: const Text(
+          'تورات، زبور اور صحیفۂ امبیاء کی شہادت',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Jameel Noori Nastaleeq Kasheeda',
+            fontSize: 20,
+          ),
+          textAlign: TextAlign.center,
+          textDirection: TextDirection.rtl,
         ),
       ),
     );

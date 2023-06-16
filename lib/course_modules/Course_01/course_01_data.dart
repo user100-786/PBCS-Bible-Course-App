@@ -226,7 +226,7 @@ import '../model_bottom_sheet/bottom_sheet.dart';
 class Course_01_data extends StatefulWidget {
   final auth = FirebaseAuth.instance;
   final String pdfUrl =
-      "https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/courses%2Fcourse_01%2FFaithfulness%20of%20God%20Part-1.pdf?alt=media&token=ec7af450-9bc7-4539-b375-1a5e087437c1";
+      "https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/courses%2Fcourse_01%2FTLPP%20Text%20only%20Unicode%20complete.pdf?alt=media&token=34b78844-4a7b-4d37-9330-7691be96a41d";
 
   Course_01_data({super.key});
 
