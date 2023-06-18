@@ -3,7 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:pbcs_bible_course/course_modules/Course_02/course_part1_and_part2_screen.dart';
 
-import 'course_02_part01_data.dart';
+import 'part01/course_02_part01_data.dart';
 
 class Course_02 extends StatefulWidget {
   final auth = FirebaseAuth.instance;

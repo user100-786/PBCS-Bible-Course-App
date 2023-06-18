@@ -9,8 +9,8 @@ import '../../constants/colors.dart';
 import '../Course_01/course_01.dart';
 import '../Course_01/course_01_data.dart';
 import 'course_02.dart';
-import 'course_02_part01_data.dart';
-import 'course_02_part02_data.dart';
+import 'part01/course_02_part01_data.dart';
+import 'part02/course_02_part02_data.dart';
 
 class CourseTwoPartsPage extends StatelessWidget {
   CourseTwoPartsPage({super.key});

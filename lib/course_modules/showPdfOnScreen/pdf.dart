@@ -1,77 +1,3 @@
-// Please don't delete commented code in this file it will be helpfull in fluture, Thanks
-
-// import 'package:flutter/material.dart';
-// import 'package:flutter_pdfview/flutter_pdfview.dart';
-// import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-
-// class MyPdfViewer extends StatefulWidget {
-//   final String pdfUrl;
-
-//   const MyPdfViewer({Key? key, required this.pdfUrl}) : super(key: key);
-
-//   @override
-//   _MyPdfViewerState createState() => _MyPdfViewerState();
-// }
-
-// class _MyPdfViewerState extends State<MyPdfViewer> {
-//   int _pages = 0;
-//   int _currentPage = 0;
-//   String? _pdfPath;
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     _downloadPdf();
-//   }
-
-//   Future<void> _downloadPdf() async {
-//     final pdfFile = await DefaultCacheManager().getSingleFile(widget.pdfUrl);
-//     setState(() {
-//       _pdfPath = pdfFile.path;
-//     });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('PDF Viewer'),
-//       ),
-//       body: _pdfPath != null
-//           ? PDFView(
-//               filePath: _pdfPath!,
-//               onPageChanged: (int? page, int? total) {
-//                 setState(() {
-//                   _currentPage = page!;
-//                   _pages = total!;
-//                 });
-//               },
-//               onRender: (_pages) {},
-//               onError: (error) {
-//                 print(error);
-//                 // Handle error while loading PDF
-//                 showDialog(
-//                   context: context,
-//                   builder: (context) => AlertDialog(
-//                     title: const Text('Error'),
-//                     content: Text('Failed to load PDF: $error'),
-//                     actions: [
-//                       TextButton(
-//                         onPressed: () {
-//                           Navigator.pop(context);
-//                         },
-//                         child: const Text('OK'),
-//                       ),
-//                     ],
-//                   ),
-//                 );
-//               },
-//             )
-//           : const Center(child: CircularProgressIndicator()),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -87,7 +13,7 @@ class MyPdfViewer extends StatefulWidget {
 
 class _MyPdfViewerState extends State<MyPdfViewer> {
   String? _pdfUrl;
-  final firestore = FirebaseFirestore.instance.collection("Course_03");
+  final firestore = FirebaseFirestore.instance.collection("Course02");
 
   late int i;
 
@@ -101,9 +27,9 @@ class _MyPdfViewerState extends State<MyPdfViewer> {
   }
 
   storeAudios() {
-    // for (int i = 1; i <= 13; i++) {
-    getPdf();
-    // }
+    for (int i = 1; i <= 10; i++) {
+      getPdf(i);
+    }
   }
 
   // Future<void> getPdf() async {
@@ -129,15 +55,15 @@ class _MyPdfViewerState extends State<MyPdfViewer> {
   //   }
   // }
 
-  Future<void> getPdf() async {
+  Future<void> getPdf(int i) async {
     try {
       final ref = FirebaseStorage.instance
           .ref()
-          .child('/audios/Course03/Sabaq ka khulasa.mp3');
+          .child('/audios/Course02/Part01/Taruf.mp3');
       final url = await ref.getDownloadURL();
       _pdfUrl = url;
       // Store the PDF link in Firestore
-      await firestore.doc('Sabaq ka khulasa').set({'Link': _pdfUrl});
+      await firestore.doc('Taruf').set({'Link': _pdfUrl});
       setState(() {});
     } catch (error) {
       Fluttertoast.showToast(
