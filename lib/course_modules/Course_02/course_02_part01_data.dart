@@ -2,7 +2,7 @@ import 'package:firebase_database/firebase_database.dart';
 // import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:pbcs_bible_course/course_modules/model_bottom_sheet/bottom_sheet.dart';
+import 'package:pbcs_bible_course/course_modules/Course_01/model_bottom_sheet/c1_bottom_sheet.dart';
 import '../../constants/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
@@ -128,7 +128,7 @@ class _Course_02_part01_dataState extends State<Course_02_part01_data> {
                           : const Center(child: CircularProgressIndicator()),
                     ),
 
-                    const ModelBottomSheet(),
+                    const CourseOneModelBottomSheet(),
                   ],
                 ),
               )

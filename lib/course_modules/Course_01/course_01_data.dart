@@ -221,7 +221,7 @@ import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 
 import '../../constants/colors.dart';
-import '../model_bottom_sheet/bottom_sheet.dart';
+import 'model_bottom_sheet/c1_bottom_sheet.dart';
 
 class Course_01_data extends StatefulWidget {
   final auth = FirebaseAuth.instance;
@@ -356,7 +356,7 @@ class _Course_01_dataState extends State<Course_01_data> {
                           : const Center(child: CircularProgressIndicator()),
                     ),
 
-                    const ModelBottomSheet(),
+                    const CourseOneModelBottomSheet(),
                   ],
                 ),
               )

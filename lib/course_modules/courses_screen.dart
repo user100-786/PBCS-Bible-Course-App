@@ -9,6 +9,8 @@ import '../../constants/colors.dart';
 import 'Course_01/course_01.dart';
 import 'Course_01/course_01_data.dart';
 import 'Course_02/course_02.dart';
+import 'Course_03/course_03.dart';
+import 'Course_03/course_03_data.dart';
 
 class CoursesScreen extends StatelessWidget {
   CoursesScreen({super.key});
@@ -151,32 +153,40 @@ class CoursesScreen extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              Container(
-                padding: const EdgeInsets.all(20.0),
-                width: mediaQuery.size.width * 0.9,
-                height: mediaQuery.size.height * 0.15,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(32),
-                  color: tSecondaryColor,
-                  boxShadow: [
-                    BoxShadow(
-                      color: tSecondaryColor,
-                      spreadRadius: 5,
-                      blurRadius: 15,
+              GestureDetector(
+                child: Container(
+                  padding: const EdgeInsets.all(20.0),
+                  width: mediaQuery.size.width * 0.9,
+                  height: mediaQuery.size.height * 0.15,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(32),
+                    color: tSecondaryColor,
+                    boxShadow: [
+                      BoxShadow(
+                        color: tSecondaryColor,
+                        spreadRadius: 5,
+                        blurRadius: 15,
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      // Text('Hello'),
+                      Course03(),
+                    ],
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Course_03_data(),
                     ),
-                  ],
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    // Image.asset(
-                    //   'assets/sun_logo.png',
-                    //   width: mediaQuery.size.width * 0.5,
-                    // ),
-                  ],
-                ),
+                  );
+                },
               ),
               const Spacer(),
             ],

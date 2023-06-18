@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/colors.dart';
-import '../Course_01/course_01_audio.dart';
+import '../../../constants/colors.dart';
+import '../course_01_audio.dart';
 
-class ModelBottomSheet extends StatefulWidget {
-  const ModelBottomSheet({super.key});
+class CourseOneModelBottomSheet extends StatefulWidget {
+  const CourseOneModelBottomSheet({super.key});
 
   @override
-  State<ModelBottomSheet> createState() => _ModelBottomSheetState();
+  State<CourseOneModelBottomSheet> createState() =>
+      _CourseOneModelBottomSheetState();
 }
 
-class _ModelBottomSheetState extends State<ModelBottomSheet> {
+class _CourseOneModelBottomSheetState extends State<CourseOneModelBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -21,7 +22,7 @@ class _ModelBottomSheetState extends State<ModelBottomSheet> {
             borderRadius: BorderRadius.circular(20.0),
           ),
           builder: (context) => Container(
-            padding: const EdgeInsets.fromLTRB(0,30,0,30),
+            padding: const EdgeInsets.fromLTRB(0, 30, 0, 30),
             child: const Course01Audio(),
             // child: const Column(
             //   crossAxisAlignment: CrossAxisAlignment.start,
