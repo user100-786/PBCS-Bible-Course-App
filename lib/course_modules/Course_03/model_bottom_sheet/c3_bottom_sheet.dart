@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../constants/colors.dart';
-import '../../Course_01/course_01_audio.dart';
 import '../lessons_audios/course_03__lesson1_audio.dart';
 import '../lessons_audios/course_03__lesson2_audio.dart';
 import '../lessons_audios/course_03__lesson3_audio.dart';

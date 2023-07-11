@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pbcs_bible_course/features/get_started_screen/sign_up_screen.dart';
-import 'audio_module/audio_file_page.dart';
-import 'course_modules/showPdfOnScreen/pdf.dart';
+import 'package:pbcs_bible_course/features/get_started_screen/dashboard.dart';
+import 'package:pbcs_bible_course/features/show_courses_screen.dart';
 import 'features/get_started_screen/first_screen.dart';
-import 'features/get_started_screen/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-
-import 'features/get_started_screen/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
+  Firebase.initializeApp();
+  runApp(const MyApp());
+  // WidgetsFlutterBinding.ensureInitialized();
+  // Firebase.initializeApp();
   // lock the landscape mode...
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]).then((_) {
-    Firebase.initializeApp();
-    runApp(const MyApp());
-  });
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp,
+  //   DeviceOrientation.portraitDown,
+  // ]).then(
+  //   (_) {
+  //     // Firebase.initializeApp();
+
+  //   },
+  // );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key});
+  const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FirstScreen(),
+      home: ExpansionPanelDemo(),
       // home: const SignUpScreen(),
       // home: LoginScreen(),
     );

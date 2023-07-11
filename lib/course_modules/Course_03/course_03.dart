@@ -1,4 +1,3 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -9,7 +8,7 @@ import 'package:just_audio/just_audio.dart' as audio;
 import 'course_03_data.dart';
 
 class Course03 extends StatefulWidget {
-  Course03({Key? key}) : super(key: key);
+  const Course03({Key? key}) : super(key: key);
 
   @override
   _Course03State createState() => _Course03State();

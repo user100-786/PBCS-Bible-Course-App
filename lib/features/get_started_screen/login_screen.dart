@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pbcs_bible_course/utils/utils.dart';
 import '../../constants/colors.dart';
-import '../../course_modules/courses_screen.dart';
 import 'sign_up_screen.dart';
 import 'dashboard.dart';
 

@@ -5,7 +5,6 @@ import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 
 import '../../constants/colors.dart';
-import '../Course_01/model_bottom_sheet/c1_bottom_sheet.dart';
 import 'model_bottom_sheet/c3_bottom_sheet.dart';
 
 class Course_03_data extends StatefulWidget {
@@ -100,7 +99,7 @@ class _Course_03_dataState extends State<Course_03_data> {
                 width: 20,
               ),
               // const SizedBox(height: 20),
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width * 0.9,
                 height: MediaQuery.of(context).size.height * 0.80,
                 child: Column(
@@ -117,7 +116,7 @@ class _Course_03_dataState extends State<Course_03_data> {
                                   _pages = total!;
                                 });
                               },
-                              onRender: (_pages) {},
+                              onRender: (pages) {},
                               onError: (error) {
                                 // print(error);
                                 // Handle error while loading PDF

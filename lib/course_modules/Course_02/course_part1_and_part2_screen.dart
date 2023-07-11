@@ -1,14 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:pbcs_bible_course/features/get_started_screen/login_screen.dart';
 import 'package:pbcs_bible_course/utils/utils.dart';
 import '../../constants/colors.dart';
-import '../Course_01/course_01.dart';
-import '../Course_01/course_01_data.dart';
-import 'course_02.dart';
 import 'part01/course_02_part01_data.dart';
 import 'part02/course_02_part02_data.dart';
 

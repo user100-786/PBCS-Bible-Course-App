@@ -1,11 +1,12 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:path/path.dart';
 import 'package:file_picker/file_picker.dart';
 
 class AddAudioPage extends StatefulWidget {
+  const AddAudioPage({super.key});
+
   @override
   _AddAudioPageState createState() => _AddAudioPageState();
 }
@@ -51,21 +52,21 @@ class _AddAudioPageState extends State<AddAudioPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Add Audio')),
+      appBar: AppBar(title: const Text('Add Audio')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton.icon(
               onPressed: _pickAudio,
-              icon: Icon(Icons.audiotrack),
-              label: Text('Pick Audio'),
+              icon: const Icon(Icons.audiotrack),
+              label: const Text('Pick Audio'),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton.icon(
               onPressed: _submitAudio,
-              icon: Icon(Icons.send),
-              label: Text('Submit Audio'),
+              icon: const Icon(Icons.send),
+              label: const Text('Submit Audio'),
             ),
           ],
         ),

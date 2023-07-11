@@ -315,7 +315,7 @@ class _Course_01_dataState extends State<Course_01_data> {
                 width: 20,
               ),
               // const SizedBox(height: 20),
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width * 0.9,
                 height: MediaQuery.of(context).size.height * 0.80,
                 child: Column(
@@ -332,7 +332,7 @@ class _Course_01_dataState extends State<Course_01_data> {
                                   _pages = total!;
                                 });
                               },
-                              onRender: (_pages) {},
+                              onRender: (pages) {},
                               onError: (error) {
                                 // print(error);
                                 // Handle error while loading PDF

@@ -2,7 +2,6 @@ import 'package:firebase_database/firebase_database.dart';
 // import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:pbcs_bible_course/course_modules/Course_01/model_bottom_sheet/c1_bottom_sheet.dart';
 import '../../../constants/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
@@ -89,7 +88,7 @@ class _Course_02_part01_dataState extends State<Course_02_part01_data> {
                 height: 20,
                 width: 20,
               ),
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width * 0.9,
                 height: MediaQuery.of(context).size.height * 0.80,
                 child: Column(
@@ -106,7 +105,7 @@ class _Course_02_part01_dataState extends State<Course_02_part01_data> {
                                   _pages = total!;
                                 });
                               },
-                              onRender: (_pages) {},
+                              onRender: (pages) {},
                               onError: (error) {
                                 // print(error);
                                 // Handle error while loading PDF

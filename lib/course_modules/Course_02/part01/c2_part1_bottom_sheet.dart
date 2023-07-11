@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pbcs_bible_course/course_modules/Course_02/part01/lessons_audio/course_02__lesson1_audio.dart';
 
 import '../../../constants/colors.dart';
-import '../../Course_01/course_01_audio.dart';
 import 'lessons_audio/Course02Taurf.dart';
 import 'lessons_audio/course_02_lesson2_audio.dart';
 import 'lessons_audio/course_02_lesson3_audio.dart';
