@@ -115,7 +115,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: LocalDataDemo(),
+          home: const ExpansionPanelDemo(),
           // Add other routes as needed
         );
       },
