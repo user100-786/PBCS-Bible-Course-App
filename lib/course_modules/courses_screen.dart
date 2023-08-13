@@ -113,7 +113,7 @@ class CoursesScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ExpansionPanelDemo(),
+                      builder: (context) => LocalDataDemo(),
                     ),
                   );
                 },
