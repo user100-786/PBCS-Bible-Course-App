@@ -28,7 +28,7 @@ class _Course2ExpansionPanelState extends State<Course2ExpansionPanel> {
       child: ExpansionPanelList(
         expansionCallback: (int pIndex, bool isExpanded) {
           setState(() {
-            _data[pIndex].isExpanded = !isExpanded;
+            _data[pIndex].isExpanded = isExpanded;
             widget.courseNo = pIndex;
           });
         },
@@ -51,42 +51,45 @@ class _Course2ExpansionPanelState extends State<Course2ExpansionPanel> {
                     itemBuilder: (context,index){
                       return Column(
                         children: [
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: appPrimaryColor,
-                                    offset: const Offset(
-                                      2.0,
-                                      6.0,
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 15),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: greyColor,
+                                      offset: const Offset(
+                                        2.0,
+                                        6.0,
+                                      ),
+                                      blurRadius: 2.0,
+                                      spreadRadius: 1.0,
+                                    ), //BoxShadow
+                                    const BoxShadow(
+                                      color: Colors.white,
+                                      offset: Offset(0.0, 0.0),
+                                      blurRadius: 0.0,
+                                      spreadRadius: 0.0,
                                     ),
-                                    blurRadius: 2.0,
-                                    spreadRadius: 1.0,
-                                  ), //BoxShadow
-                                  const BoxShadow(
-                                    color: Colors.white,
-                                    offset: Offset(0.0, 0.0),
-                                    blurRadius: 0.0,
-                                    spreadRadius: 0.0,
-                                  ),
-                                ]
-                            ),
-                            child: ListTile(
-                              onTap:(){
-                                if(widget.courseNo == 0){
-                                  widget.courseName = 'Part 01';
-                                }else if(widget.courseNo == 1){
-                                  widget.courseName = 'Part 02';
-                                }
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) => CourseScreen(
-                                        text: '', title:  widget.courseName!,
-                                        lessonNo: dataList[widget.courseNo][index])
-                                    ));
-                              },
-                              leading: Icon(CupertinoIcons.book_solid,color: appPrimaryColor,),
-                              title: Text(dataList[widget.courseNo][index]),
+                                  ]
+                              ),
+                              child: ListTile(
+                                onTap:(){
+                                  if(widget.courseNo == 0){
+                                    widget.courseName = 'Part 01';
+                                  }else if(widget.courseNo == 1){
+                                    widget.courseName = 'Part 02';
+                                  }
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) => CourseScreen(
+                                          text: '', title:  widget.courseName!,
+                                          lessonNo: dataList[widget.courseNo][index])
+                                      ));
+                                },
+                                leading: Icon(CupertinoIcons.book_solid,color: appPrimaryColor,),
+                                title: Text(dataList[widget.courseNo][index]),
+                              ),
                             ),
                           ),
                           SizedBox(height: MediaQuery.of(context).size.height * .02,)

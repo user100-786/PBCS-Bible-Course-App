@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pbcs_bible_course/New%20Views/course2_exoansion_panel.dart';
 import 'package:pbcs_bible_course/New%20Views/expandedbody.dart';
 import 'package:pbcs_bible_course/constants/colors.dart';
-// stores ExpansionPanel state information
+
 class ExpansionPanelListExample extends StatefulWidget {
   const ExpansionPanelListExample({Key? key}) : super(key: key);
 
@@ -14,38 +14,28 @@ class ExpansionPanelListExample extends StatefulWidget {
 
 class _ExpansionPanelListExampleState extends State<ExpansionPanelListExample> {
   List<List<String>> dataList = [
-    ['Introduction','Lesson 01','Lesson 02','Lesson 03','Lesson 04','Lesson 05'],
-    ['intro'],
-    ['Introduction','Lesson 01','Lesson 02','Lesson 03','Lesson 04','Lesson 05']
+    ['Introduction', 'Lesson 01', 'Lesson 02', 'Lesson 03', 'Lesson 04', 'Lesson 05'],
+    ['empty'],
+    ['Introduction', 'Lesson 01', 'Lesson 02', 'Lesson 03', 'Lesson 04', 'Lesson 05']
   ];
-  int courseNo=0;
+  int courseNo = 0;
   final refDB = FirebaseDatabase.instance.ref('courses');
   final List<Item> _data = generateItems(3);
   String courseName = '';
+  int expandedPanelIndex = -1; // Initialize with -1 to indicate no panel is expanded.
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: const Icon(Icons.arrow_back_ios_new),
         title: const Text('Courses'),
         backgroundColor: appPrimaryColor,
-        //actions: [
-          // GestureDetector(
-          //   onTap: () => _fontSizeModelBottomSheet(context),
-          //   child: const Padding(
-          //     padding: EdgeInsets.only(right: 10),
-          //     child: Icon(
-          //       Icons.more_vert,
-          //       size: 28,
-          //     ),
-          //   ),
-          // )],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -54,56 +44,64 @@ class _ExpansionPanelListExampleState extends State<ExpansionPanelListExample> {
       ),
     );
   }
-  Widget _decision(){
-    if(courseNo == 1) {
-      return Course2ExpansionPanel(courseNo: courseNo,courseName: courseName,);
+
+  Widget _decision() {
+    if (courseNo == 1) {
+      return Course2ExpansionPanel(courseNo: courseNo, courseName: courseName);
     }
-      return ExpandableBody(dataList: dataList, courseNo: courseNo , courseName: courseName,);
+    return ExpandableBody(dataList: dataList, courseNo: courseNo, courseName: courseName);
   }
+
   Widget _buildPanel() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: ExpansionPanelList(
+        elevation: 1,
+        expandedHeaderPadding: const EdgeInsets.all(0),
         expansionCallback: (int pIndex, bool isExpanded) {
           setState(() {
-            _data[pIndex].isExpanded = !isExpanded;
-            courseNo = pIndex;
+            if (isExpanded) {
+              // Close the currently expanded panel.
+              expandedPanelIndex = -1;
+            } else {
+              courseNo = pIndex;
+              expandedPanelIndex = pIndex;
+            }
           });
         },
         children: _data.map<ExpansionPanel>((Item item) {
           return ExpansionPanel(
             headerBuilder: (BuildContext context, bool isExpanded) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 0),
-                child: ListTile(
-                  title: Text(item.headerValue,style: const TextStyle(fontSize: 18),),
-                contentPadding: const EdgeInsets.only(top: 15,left: 15,right: 15),
-                ),
+              return ListTile(
+                title: Text(item.headerValue, style: const TextStyle(fontSize: 18)),
+                contentPadding: const EdgeInsets.all(10),
               );
             },
             body: _decision(),
-            isExpanded: !item.isExpanded,
+            isExpanded: expandedPanelIndex == _data.indexOf(item),
           );
         }).toList(),
       ),
     );
   }
 }
+
 class Item {
   Item({
     required this.expandedValue,
     required this.headerValue,
-    this.isExpanded = true,
+    this.isExpanded = false, // Initially, panels are collapsed.
   });
 
   String expandedValue;
   String headerValue;
   bool isExpanded;
 }
+
 List<Item> generateItems(int numberOfItems) {
   return List<Item>.generate(numberOfItems, (int index) {
     return Item(
-      headerValue: 'Course ${index+1}',
+      headerValue: 'Course ${index + 1}',
       expandedValue: '',
     );
   });

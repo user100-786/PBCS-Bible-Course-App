@@ -69,6 +69,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pbcs_bible_course/New%20Views/finalcourselistscreen.dart';
 import 'package:pbcs_bible_course/provider/font_size_provider.dart';
 import 'package:provider/provider.dart';
@@ -80,13 +81,8 @@ void main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]).then((_) async {
-    runApp(MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => FontSizeProvider()),
-        // Add other providers if needed
-      ],
-      child: const MyApp(),
-    ));
+    runApp( ProviderScope(child: const MyApp()),
+    );
   });
 }
 
