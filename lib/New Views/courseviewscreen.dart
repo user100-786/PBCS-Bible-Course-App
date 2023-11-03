@@ -11,6 +11,7 @@ import 'package:pbcs_bible_course/New%20Views/quizview.dart';
 import 'package:shimmer/shimmer.dart';
 import '../constants/colors.dart';
 import '../course_modules/Course_02/part01/lessons_audio/Course02Taurf.dart';
+import 'finalcourselistscreen.dart';
 final audioButtonProvider = StateNotifierProvider<AudioButtonController, bool>((ref) {
   return AudioButtonController();
 });
@@ -46,11 +47,16 @@ class _CourseScreenState extends State<CourseScreen> {
   String courseName = '';
   AllCoursesLessonsData courseData = AllCoursesLessonsData();
   bool isPaused = false;
+  bool initial = true;
   Duration currentPosition = Duration.zero; // Variable to track the current position
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    initial = true;
+    setState(() {
+
+    });
     lessonName = widget.lessonNo;
     courseName = widget.title;
   }
@@ -59,6 +65,7 @@ class _CourseScreenState extends State<CourseScreen> {
     // TODO: implement dispose
     super.dispose();
     audioPlayer.dispose();
+
   }
   @override
   Widget build(BuildContext context) {
@@ -70,23 +77,23 @@ class _CourseScreenState extends State<CourseScreen> {
             if(isPlaying){
               audioPlayer.pause();
             }
-            isPlaying = false;
+          isPlaying = false;
             setState(() {
+
             });
           Navigator.pop(context);
-        },),
+          },),
         backgroundColor: appPrimaryColor,
         title: Text("$courseName $lessonName"),
       ),
       body: WillPopScope(
-        onWillPop: ()async{
+        onWillPop: ()
+        async {
           if(isPlaying){
-            audioPlayer.pause();
-            isPlaying = false;
-            setState(() {
-            });
-          }
-          return false;
+          audioPlayer.pause();
+        }
+        isPlaying = false;
+        return false;
         },
         child: Column(
           children: [
@@ -121,11 +128,15 @@ class _CourseScreenState extends State<CourseScreen> {
                             Align(
                               alignment: Alignment.topLeft,
                               child: Consumer(builder: (context, ref, child) {
-                                final isPlaying = ref.watch(audioButtonProvider);
+                               final isPlaying = ref.watch(audioButtonProvider);
                                 return InkWell(
                                   onTap: () async {
                                     ref.read(audioButtonProvider.notifier).toggleAudioButton();
                                     playAudios();
+                                    initial = false;
+                                    setState(() {
+
+                                    });
                                   },
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
@@ -280,7 +291,6 @@ class _CourseScreenState extends State<CourseScreen> {
       isPlaying = true;
       isPaused = false;
       await audioPlayer.play();
-
 
       if(!isPaused){
         audioPlayer.playerStateStream.listen((playerState) {

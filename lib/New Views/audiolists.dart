@@ -1685,57 +1685,56 @@ class AudioListsAndQuestionsList{
 
 
 
-
   List<AudioFile> course1Introduction = [
-  AudioFile(
-  filePath:
-  'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2F1.mp3?alt=media&token=813732ca-7c4e-455b-9a02-b5d73419ff68',
-  label: '1.2 taruf paragraph'),
+    AudioFile(
+        filePath:
+        'https://drive.google.com/uc?export=download&id=1Aav-zLfxq8O4_UnXBBJe2GREo8rjz9xW',
+        label: '1.2 taruf paragraph'),
   ];
   List<AudioFile> course1lesson1 = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2F2.mp3?alt=media&token=04721954-dcf0-4dec-b6ea-d152eb1712d3',
+        'https://drive.google.com/uc?export=download&id=1tMaoaKBcWmMGCyV9ipl_dLgF3qFoXMkF',
         label: '3.2 khaliq-e-kainat paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2F3.mp3?alt=media&token=cc55102d-90a1-4206-bd01-0c9daecc08cd',
-        label: '4.2 qadr-e-mutalik khuda paragraph'),
+    // AudioFile(
+    //     filePath:
+    //         '',
+    //     label: '4.2 qadr-e-mutalik khuda paragraph'),
   ];
   List<AudioFile> course1lesson2 = [
     AudioFile(
-      filePath:
-      'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2F4.mp3?alt=media&token=abec99e4-b585-49c6-be5b-ce3ea9b77666',
-      label: '5.2 wahid ul lashareek khuda paragraph'),
-    AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2F5.mp3?alt=media&token=25e66e5f-3bd1-4984-aab1-14863c6f6480',
-        label: '6.1 Khuda taala aik paak zaat'),
+        'https://drive.google.com/uc?export=download&id=1AuDprlVotNhPbUTmpZsKQSK7lBGy84kB',
+        label: '5.2 wahid ul lashareek khuda paragraph'),
+    // AudioFile(
+    //     filePath:
+    //         '',
+    //     label: '6.1 Khuda taala aik paak zaat'),
   ];
   List<AudioFile> course1lesson3 = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2F6.mp3?alt=media&token=1c1273f0-66a5-4869-bbd2-75811f805b24',
+        'https://drive.google.com/uc?export=download&id=1zxOCQI5hadb7IB32DjaSim-Uyko7Hn99',
         label: '7.1 Raheem o kareem khuda'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2F7.mp3?alt=media&token=d77304cd-b45f-4288-bf52-4eb9f50c40c9',
-        label: '8.2 parwardigar paragraph'),
+    // AudioFile(
+    //     filePath:
+    //         '',
+    //     label: '8.2 parwardigar paragraph'),
   ];
   List<AudioFile> course1lesson4 = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2F8.mp3?alt=media&token=9800436d-37f1-4bfa-9037-03273de337e4',
+        'https://drive.google.com/uc?export=download&id=11vcgtyuHcd0Safb_KYOiv9MQR7qdK0KM',
         label: '9.2 muhafiz-e-kainat paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2F8.mp3?alt=media&token=9800436d-37f1-4bfa-9037-03273de337e4',
-        label: '10.2 rab-ul-alamin paragraph'),
+    // AudioFile(
+    //     filePath:
+    //         '',
+    //     label: '10.2 rab-ul-alamin paragraph'),
   ];
   List<AudioFile> course1lesson5 = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2F8.mp3?alt=media&token=9800436d-37f1-4bfa-9037-03273de337e4',
+        'https://drive.google.com/uc?export=download&id=14D1hjRTQpab-qTav6THIZup_02Nt7sE_',
         label: '11.2 seekhne ki baat paragraph L1'),
   ];
   List<AudioFile> part1lesson1 = [

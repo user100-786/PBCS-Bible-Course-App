@@ -4,6 +4,7 @@ import 'package:pbcs_bible_course/New%20Views/resultScreen.dart';
 import 'package:pbcs_bible_course/constants/colors.dart';
 
 import 'audiolists.dart';
+import 'finalcourselistscreen.dart';
 
 class QuizScreen extends StatefulWidget {
   final String courseName;
@@ -30,6 +31,8 @@ class _QuizScreenState extends State<QuizScreen> {
   void initState() {
     // TODO: implement initState
     initializeQuestionData();
+    correctAnswer = 0;
+    iterCounter=0;
     super.initState();
   }
 
@@ -37,6 +40,15 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          onPressed: () {
+            iterCounter = 0;
+            correctAnswer = 0;
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const ExpansionPanelListExample()));
+          },
+         ),
         backgroundColor: appPrimaryColor,
         title: Text("Question ${iterCounter + 1} / ${questionData.length}"),
       ),

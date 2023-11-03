@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
+import 'finalcourselistscreen.dart';
 
 class ResultScreen extends StatefulWidget {
   final int correctAnswer;
@@ -17,6 +18,11 @@ class _ResultScreenState extends State<ResultScreen> {
       appBar: AppBar(
         title: const Text('Result'),
         centerTitle: true,
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const ExpansionPanelListExample()));
+          }, icon: Icon(Icons.arrow_back_ios_new),),
         backgroundColor: appPrimaryColor,
       ),
       body: Column(
