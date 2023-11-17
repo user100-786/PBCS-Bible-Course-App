@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pbcs_bible_course/New%20Views/expansion_panel.dart';
+import 'package:pbcs_bible_course/New%20Views/finalcourselistscreen.dart';
 import 'package:pbcs_bible_course/utils/utils.dart';
 import '../../constants/colors.dart';
 import 'sign_up_screen.dart';
@@ -44,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
         // Move to second screen
         context,
         MaterialPageRoute(
-          builder: (context) => const NewCourseScreen(),
+          builder: (context) => const ExpansionPanelListExample(),
         ),
       );
       setState(() {
@@ -52,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
       });
     }).onError((error, stackTrace) {
       debugPrint(error.toString());
-      Utils().toastMessage(error.toString());
+      Utils().toastMessage('Login UnSuccessful');
       setState(() {
         loading = false;
       });

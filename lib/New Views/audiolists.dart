@@ -1737,590 +1737,182 @@ class AudioListsAndQuestionsList{
         'https://drive.google.com/uc?export=download&id=14D1hjRTQpab-qTav6THIZup_02Nt7sE_',
         label: '11.2 seekhne ki baat paragraph L1'),
   ];
-  List<AudioFile> part1lesson1 = [
+  List<AudioFile> part2lesson1 = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson01%2F1.mp3?alt=media&token=5fc21a87-1008-4a72-ab89-30da582a9a93',
+        'https://drive.google.com/uc?export=download&id=1bhEtS0Z6IFVpO0HdnXWGrd2lVj7RCWXa',
         label: 'Gunah aur shiataan ko kuchlne ka ilahi mansooba paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson01%2F2.mp3?alt=media&token=222df6db-8470-4efc-a6bb-15ba8a494c4d',
-        label: 'Hazrat Adam aur hawa k baray ilahi faisla'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson01%2F3.mp3?alt=media&token=91358501-3ca7-4cc7-a29f-1b7073935726',
-        label: 'Hazrat Adam aur hawa Khuda tala k robroo paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson01%2F4.mp3?alt=media&token=511349a9-71ce-441c-92a2-4ae94d615a5a',
-        label: 'Shariat-e-ilahi aur gunah paragaph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson01%2F5.mp3?alt=media&token=7dd3bd58-a568-4c7b-b3d0-bd2a282a8e1e',
-        label: 'Shariat-e-ilahi ki farmanbrdari ki barkat pargrapgh'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson01%2F6.mp3?alt=media&token=81fbc849-f9d5-4ba4-b5c3-49305275d223',
-        label: 'Shariat-e-ilahi ki nafarmani ki saza paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson01%2F7.mp3?alt=media&token=f02777a3-3489-441e-8f0c-e317fa34944d',
-        label: 'zameen pr shariat-e-ilahi ki pehli nafarmani'),
-  ];
-  List<AudioFile> part1Introduction = [
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FTaruf.mp3?alt=media&token=7e2f2b9d-3745-4080-907a-3f541e078e6a',
-        label: 'Taruf'),
-  ];
-  List<AudioFile> part1lesson2 = [
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson02%2F1.mp3?alt=media&token=8a0579a1-173f-4d32-a066-b82fd4eaf516',
-        label: 'abraham ki wafadari ka ajar paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson02%2F2.mp3?alt=media&token=f4f72b49-b77a-447e-b51f-9832a6309679',
-        label: 'Alamgeer gunah aur alamgeer fazal-e-ilahi hissa awal'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson02%2F3.mp3?alt=media&token=6488a442-8a84-4362-823f-7673c929988c',
-        label: 'aqwam-e-alam k liye barkat ki khushkhabri'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson02%2F4.mp3?alt=media&token=616075e4-c8a5-4dcb-9501-1b546797b356',
-        label: 'Hazrat Abraham ka Dusra imtehan'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson02%2F5.mp3?alt=media&token=d35433c3-3206-4712-85d2-622c856a4014',
-        label: 'Hazrat Abraham ka Imtehan Paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson02%2F6.mp3?alt=media&token=aab9ef20-47a7-46d2-a209-9cd111c01e95',
-        label:
-        'Hissa doum alamgeer fazal ilahi( INSAN KI BEBASI AUR ILAHI MADAD)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson02%2F7.mp3?alt=media&token=dc93ca7a-193d-4fd2-b646-ef5b3654f869',
-        label: 'Nasal-e-Abraham Paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson02%2F8.mp3?alt=media&token=a6a94658-44a3-499f-8bc7-ac1ef715aa5b',
-        label: 'Puri nasal-e-insani mein gunah'),
-  ];
-  List<AudioFile> part1lesson3 = [
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson03%2F1.mp3?alt=media&token=8348b009-d21d-412f-b791-199a9aa17a84',
-        label: 'Bani Israel Misar Mein'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson03%2F2.mp3?alt=media&token=6f41a88e-c4c5-4df5-b49b-bef58f4f73d4',
-        label: 'Hazrat Abraham se kiye gaye ilahi wada ka tasalal paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson03%2F3.mp3?alt=media&token=ee548c04-7bf3-41e0-8412-a8c4ba3b0c79',
-        label: 'Hazrat Abraham se wada ki juzwi takmeel Paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson03%2F4.mp3?alt=media&token=a5a77c0d-e27a-4122-be34-081371784d3d',
-        label: 'Hazrat Izhaque se waada paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson03%2F5.mp3?alt=media&token=a1be92df-ffe4-4192-8c31-d95d9c52b02d',
-        label: 'Hazrat Yaqoob ka naya naam'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson03%2F6.mp3?alt=media&token=fb45547d-bdd9-4324-9f73-c7686f8cc760',
-        label: 'hazrat yaqoob se waada paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson03%2F7.mp3?alt=media&token=82a24285-b358-4ad1-bef9-e2d32c70691f',
-        label: 'Hazrat Yousaf Bahaisiat hakim-e-misar'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson03%2F8.mp3?alt=media&token=9ead3290-2215-452e-b24a-2de6fbb6d795',
-        label: 'Hazrat Yousaf Paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson03%2F9.mp3?alt=media&token=a1ff41ae-fa58-4b78-bee0-1ad54c2d52d4',
-        label: 'Khuda taala ki maooda nasal-e-abraham'),
-  ];
-  List<AudioFile> part1lesson4 = [
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson04%2F1.mp3?alt=media&token=3d801a1b-2fe9-4151-8a19-e9ffd42c65a3',
-        label: 'Bani israel k abai bazurgo se khuda ka wada'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson04%2F2.mp3?alt=media&token=5e84b652-0b75-45d9-965d-f0da3dfeeefa',
-        label: 'Bani Israel ki aah o pukar paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson04%2F3.mp3?alt=media&token=d943dea9-1224-4337-bdbe-e42168261f65',
-        label: 'Fasah ki Qurbani Paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson04%2F4.mp3?alt=media&token=5405ee83-1b6f-4446-a0bd-8df859c0546d',
-        label: 'Hazrat Moosa aur firaun ka amna samna paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson04%2F5.mp3?alt=media&token=107c3072-ade4-469b-b80a-873fc540784d',
-        label: 'Hazrat Moosa aur Firaun Paragraph'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson04%2F6.mp3?alt=media&token=5ce80163-8ddc-4078-ae36-4bb3b89779ae',
-        label: 'Hazrat Moosa pr Khuda ka zahoor'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson04%2F7.mp3?alt=media&token=bf6906fd-a11e-4b8e-872c-cec3d3c00821',
-        label: 'Khuda Bachata hai'),
-  ];
-  List<AudioFile> part1lesson5 = [
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson05%2F1.mp3?alt=media&token=23b918d9-9244-48d8-b464-ce88028a5a40',
-        label: 'Abraham se kiye giye ilahi waday ka zair-e-takmeel hissa'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson05%2F2.mp3?alt=media&token=2a129dc6-c25d-443a-b8c2-87f3e05e46b0',
-        label: 'Abraham se kiye giye ilahi waday ky aik hissa ki takmeel'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson05%2F3.mp3?alt=media&token=b0f9a1bc-7dc0-4645-9645-2494ebd97345',
-        label: 'Bani Israel ka gunah aur khuda ka fazal'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson05%2F4.mp3?alt=media&token=90811b8a-fc66-4d8d-af58-463129fe40db',
-        label: 'Bani Israel ki kam aetkadi aur us ka nateeja'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson05%2F5.mp3?alt=media&token=4b8e712d-b0af-48c7-acd6-198b8b469fb0',
-        label: 'bani israel mulk-e-kanaan mein'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson05%2F6.mp3?alt=media&token=4e5ae4a9-5a76-420d-8d19-baff3ad99221',
-        label: 'Israeli rahnumaon ki kam aetkadi aur us ka nateja'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson05%2F7.mp3?alt=media&token=a3e40dba-93bd-4fa8-a0b1-a956a8b8fa94',
-        label: 'Khuda apni shariat atta krta hai'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson05%2F8.mp3?alt=media&token=ac8ca005-a96f-4261-abbf-f8f880102e07',
-        label:
-        'Khuda najat deta hai (Biyaban mein Khuda tala ki parwatdigari)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson05%2F9.mp3?alt=media&token=55f544cd-d112-4a32-84c8-63dde05206d2',
-        label: 'Nai nasal aur nai qiadat'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FAzeez%20Talib%20Ilm.mp3?alt=media&token=6f3f0ede-d888-448e-bcb0-59f12f3fb00e',
-        label: 'Azeez Talib Ilm'),
+    // AudioFile(
+    //     filePath:
+    //     'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson01%2F2.mp3?alt=media&token=222df6db-8470-4efc-a6bb-15ba8a494c4d',
+    //     label: 'Hazrat Adam aur hawa k baray ilahi faisla'),
+    // AudioFile(
+    //     filePath:
+    //     'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson01%2F3.mp3?alt=media&token=91358501-3ca7-4cc7-a29f-1b7073935726',
+    //     label: 'Hazrat Adam aur hawa Khuda tala k robroo paragraph'),
+    // AudioFile(
+    //     filePath:
+    //     'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson01%2F4.mp3?alt=media&token=511349a9-71ce-441c-92a2-4ae94d615a5a',
+    //     label: 'Shariat-e-ilahi aur gunah paragaph'),
+    // AudioFile(
+    //     filePath:
+    //     'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson01%2F5.mp3?alt=media&token=7dd3bd58-a568-4c7b-b3d0-bd2a282a8e1e',
+    //     label: 'Shariat-e-ilahi ki farmanbrdari ki barkat pargrapgh'),
+    // AudioFile(
+    //     filePath:
+    //     'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson01%2F6.mp3?alt=media&token=81fbc849-f9d5-4ba4-b5c3-49305275d223',
+    //     label: 'Shariat-e-ilahi ki nafarmani ki saza paragraph'),
+    // AudioFile(
+    //     filePath:
+    //     'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson01%2F7.mp3?alt=media&token=f02777a3-3489-441e-8f0c-e317fa34944d',
+    //     label: 'zameen pr shariat-e-ilahi ki pehli nafarmani'),
   ];
   List<AudioFile> part2Introduction = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FAziz%20Talib%20Ilm%20(Starting).mp3?alt=media&token=a485402a-770b-40a2-9405-ff91af1fc282',
-        label: 'Sabaq ka Taurf'),
-  ];
-  List<AudioFile> part2lesson1 = [
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson01%2F1.mp3?alt=media&token=5099ec16-3be2-4af9-8994-8b7c5dda13cc',
-        label: 'Abrahami barkat k baray aap ki paishangoian'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson01%2F2.mp3?alt=media&token=23184739-bcd4-412f-afcf-460b7335edb1',
-        label: 'Anay wali muqadas hasti k khatabat'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson01%2F3.mp3?alt=media&token=f5698519-eab1-4f49-ae99-c3602de84e7b',
-        label: 'Bani Israel ka Pehla badshah'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson01%2F4.mp3?alt=media&token=5fbf2944-5c86-49a1-bf14-d7c391627071',
-        label: 'Bani Israel ky qazi aur badshah'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson01%2F5.mp3?alt=media&token=c8dc1a30-4608-41f8-ae9b-9f8e67977c44',
-        label: 'dushmano se rehai'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson01%2F6.mp3?alt=media&token=b72d5239-ba67-411d-aba4-78f808babcb5',
-        label: 'Hazrat Dawood Khuda ki adalat mein'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson01%2F7.mp3?alt=media&token=b700e519-92aa-4afd-8140-ac6e80ab421e',
-        label: 'Hazrat Dawood ky sath Khuda ka daimi ehad'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson01%2F8.mp3?alt=media&token=a3fc6bc8-28c9-43e7-800a-244a0701203d',
-        label: 'Note'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson01%2F9.mp3?alt=media&token=cbe1e478-018b-40fd-912d-2e727933ca5e',
-        label: 'Qaziyo ka daur'),
+        'https://drive.google.com/uc?export=download&id=1TYIu-h58AJ6ax6D6BX5mfErSQ0-HBe8w',
+        label: 'Taruf'),
   ];
   List<AudioFile> part2lesson2 = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson02%2F1.mp3?alt=media&token=de4ec10d-7043-43c7-b114-15ddd6addc60',
-        label: 'Abdi badshah almaseeh k alqaab'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson02%2F2.mp3?alt=media&token=2126c063-0160-4c5b-b04e-114baa2ebc90',
-        label: 'abdi badshah almaseeh k kaam'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson02%2F3.mp3?alt=media&token=1e0a3a1b-0155-44f4-917f-8f8525d38ad7',
-        label: 'Abdi badshah almaseeh ki khasoosiyaat'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson02%2F4.mp3?alt=media&token=020daf72-721d-437f-b7b3-825c0c48b3a9',
-        label: 'Abdi Badshah ka hasab nasab'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson02%2F5.mp3?alt=media&token=207619e5-9433-488f-9824-10434ff1f312',
-        label: 'abdi badshah ki kafara baksh mout'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson02%2F6.mp3?alt=media&token=e697dd32-fa2d-44bd-8070-0dabfbece9b5',
-        label: 'Almaseeh k baray Khuda ki marzi'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson02%2F7.mp3?alt=media&token=634f975d-e5aa-4bc6-bbc2-89707911a343',
-        label: 'Anay wali badshah ki pehchan'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson02%2F8.mp3?alt=media&token=bde93ae9-0910-43bf-90d7-45534b2fa392',
-        label: 'yasaya nabi aik azeem paigambar'),
+        'https://drive.google.com/uc?export=download&id=1RurFcpI3npKde_ivbFn9fvgBN5PHPBEb',
+        label: 'abraham ki wafadari ka ajar paragraph'),
+    // AudioFile(
+    //     filePath:
+    //     'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson02%2F2.mp3?alt=media&token=f4f72b49-b77a-447e-b51f-9832a6309679',
+    //     label: 'Alamgeer gunah aur alamgeer fazal-e-ilahi hissa awal'),
+    // AudioFile(
+    //     filePath:
+    //     'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson02%2F3.mp3?alt=media&token=6488a442-8a84-4362-823f-7673c929988c',
+    //     label: 'aqwam-e-alam k liye barkat ki khushkhabri'),
+    // AudioFile(
+    //     filePath:
+    //     'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson02%2F4.mp3?alt=media&token=616075e4-c8a5-4dcb-9501-1b546797b356',
+    //     label: 'Hazrat Abraham ka Dusra imtehan'),
+    // AudioFile(
+    //     filePath:
+    //     'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson02%2F5.mp3?alt=media&token=d35433c3-3206-4712-85d2-622c856a4014',
+    //     label: 'Hazrat Abraham ka Imtehan Paragraph'),
+    // AudioFile(
+    //     filePath:
+    //     'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson02%2F6.mp3?alt=media&token=aab9ef20-47a7-46d2-a209-9cd111c01e95',
+    //     label:
+    //     'Hissa doum alamgeer fazal ilahi( INSAN KI BEBASI AUR ILAHI MADAD)'),
+    // AudioFile(
+    //     filePath:
+    //     'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson02%2F7.mp3?alt=media&token=dc93ca7a-193d-4fd2-b646-ef5b3654f869',
+    //     label: 'Nasal-e-Abraham Paragraph'),
+    // AudioFile(
+    //     filePath:
+    //     'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart01%2FLesson02%2F8.mp3?alt=media&token=a6a94658-44a3-499f-8bc7-ac1ef715aa5b',
+    //     label: 'Puri nasal-e-insani mein gunah'),
   ];
   List<AudioFile> part2lesson3 = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson03%2F1.mp3?alt=media&token=c580a3bc-1cc8-40a9-9712-23cb001fa1d9',
-        label: 'Bani Israel ka zawal aur Khuda ki wafadari'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson03%2F2.mp3?alt=media&token=2bdcdc26-a6ee-4547-bff9-2a124ad2dd0a',
-        label: 'Hazrat Amoos'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson03%2F3.mp3?alt=media&token=f740fe3e-66cb-4be5-9d7b-2b1d97d09225',
-        label: 'Hazrat Hosea'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson03%2F4.mp3?alt=media&token=8e67d194-4f10-4a6e-8609-b368eda116b8',
-        label: 'Logon ki bewafai aur Khuda ki wafadari'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson03%2F5.mp3?alt=media&token=809303d5-a5f6-4ba1-8d46-ba97fdc39473',
-        label: 'Saltanat ki taqseem'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson03%2F6.mp3?alt=media&token=475ee7e8-be75-42cb-a1d6-4e63aaff5062',
-        label: 'Shumali Saltanat k ambia karaam'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson03%2F7.mp3?alt=media&token=88a46698-ce9b-4a8e-b0af-2f67a1887844',
-        label: 'Shumali saltanat ka khaatma'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson03%2F8.mp3?alt=media&token=59d95232-077d-4c37-9246-cd05049227a5',
-        label: 'Umeed ka paigam'),
+        'https://drive.google.com/uc?export=download&id=1Iq8181jAKWTX531aCaaIOEJZhJqoyqlK',
+        label: 'Bani Israel Misar Mein'),
   ];
   List<AudioFile> part2lesson4 = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson04%2F1.mp3?alt=media&token=767c7f9f-cd8a-4882-983e-8f730ef0f564',
-        label: 'Aseeri k bad k nabi (Hazrat Zakriya)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson04%2F2.mp3?alt=media&token=ac44e443-ae1f-4fcf-8754-29ac4c84ecaa',
-        label: 'Aseeri k zamana k nabi (Hazrat Daniel)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson04%2F3.mp3?alt=media&token=ab0dd78d-d2ee-4013-87a4-162293505cac',
-        label: 'Aseeri se kabal k nabi (Hazrat Yermiah)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson04%2F4.mp3?alt=media&token=b43d272f-2f16-47b4-8614-ce517d2d57d9',
-        label: 'Aseeri se qabal k nabi (Hazrat Micah)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson04%2F5.mp3?alt=media&token=aa16c1a8-4113-47c4-970f-1a1f6c03373f',
-        label: 'Bani Israel ka zawal awr khuda ki muhabat (Hissa Doum)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson04%2F6.mp3?alt=media&token=cb3cbe81-037e-40eb-8845-b2f69fdcdaf4',
-        label: 'Dua'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson04%2F7.mp3?alt=media&token=41d7e09c-f666-4383-b351-745adadfea7a',
-        label: 'Janoobi Saltanat (Bani yahooda ka anjmaa)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson04%2F8.mp3?alt=media&token=6ed897ca-d489-4db7-857f-8376c5317f20',
-        label: 'Janoobi saltanat k ambia ka paigam'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson04%2F9.mp3?alt=media&token=a8a5d290-9175-4417-9190-bb00e1db0108',
-        label: 'Janoobi saltanat k ambia karam'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson04%2F10.mp3?alt=media&token=4cb7122a-9e34-4a4c-853e-dbf57c7a6b79',
-        label: 'Janoobi saltanat'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson04%2F11.mp3?alt=media&token=91d0a80e-dd84-4bb2-a39b-b6c1dfd6b255',
-        label: 'Sabaq ka khulasa'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson04%2F12.mp3?alt=media&token=828493b5-4488-4d45-8372-045666f83ce4',
-        label: 'Zaman aseeri se qabal k ambia'),
+        'https://drive.google.com/uc?export=download&id=10MsASqF3O6SS1kwH31eN3OfBCp0qFMXl',
+        label: 'Bani israel k abai bazurgo se khuda ka wada'),
+
   ];
   List<AudioFile> part2lesson5 = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson05%2F1.mp3?alt=media&token=facb42e0-7edb-4b98-84f4-414f8c2f4e33',
+        'https://drive.google.com/uc?export=download&id=1etBXFJi6qyrVGmfykuLpT2MRZ7_Du45u',
+        label: 'Abraham se kiye giye ilahi waday ka zair-e-takmeel hissa'),
+    AudioFile(
+        filePath:
+        'https://drive.google.com/uc?export=download&id=1WsUBY3YWXJ4XwC96txy_mQOA6TSszqy_',
+        label: ''),
+  ];
+  List<AudioFile> part1Introduction = [
+    AudioFile(
+        filePath:
+        'https://drive.google.com/uc?export=download&id=1i3Ny-NBKJY2tWs6Hx1xeP6Zps5aFn9mC',
+        label: 'Sabaq ka Taurf'),
+  ];
+  List<AudioFile> part1lesson1 = [
+    AudioFile(
+        filePath:
+        'https://drive.google.com/uc?export=download&id=17TCPcaxWxvkENiV4hVEZ4TXrsMzPYw5z',
+        label: 'Abrahami barkat k baray aap ki paishangoian'),
+
+  ];
+  List<AudioFile> part1lesson2 = [
+    AudioFile(
+        filePath:
+        'https://drive.google.com/uc?export=download&id=1eS1xacPMaakJK7r3fiERRIQjlSZk2QKJ',
+        label: 'Abdi badshah almaseeh k alqaab'),
+
+  ];
+  List<AudioFile> part1lesson3 = [
+    AudioFile(
+        filePath:
+        'https://drive.google.com/uc?export=download&id=1BTPzRCPZRSdDOakDzOzR95J4N4iOfC2B',
+        label: 'Bani Israel ka zawal aur Khuda ki wafadari'),
+
+  ];
+  List<AudioFile> part1lesson4 = [
+    AudioFile(
+        filePath:
+        'https://drive.google.com/uc?export=download&id=19SEbwT_rt1d6Lw5F5f6BD-6shOMb2hAu',
+        label: 'Aseeri k bad k nabi (Hazrat Zakriya)'),
+
+  ];
+  List<AudioFile> part1lesson5 = [
+    AudioFile(
+        filePath:
+        'https://drive.google.com/uc?export=download&id=1-FCCZQQ5x0d_3HfaiCbT-Bm5-lgaTjaT',
         label: 'Abraham se ilahi waada'),
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson05%2F2.mp3?alt=media&token=07833bc3-62fb-47a1-b513-1b36c3268ffa',
-        label: 'Abraham se kiye gaye ilahi waada ka zair-e-takmeel hissa'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson05%2F3.mp3?alt=media&token=4ab59ce3-5ed8-4815-b6ae-f8150203f84e',
-        label: 'Anay walay maseeh ka jeena, marna aur zinda hona'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson05%2F4.mp3?alt=media&token=1f893026-c078-41cd-ba9a-d6568b0cdcdf',
-        label: 'Anay wali maseeh ki qoum aur khandan'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson05%2F5.mp3?alt=media&token=6fd3f63e-799b-4f04-8886-1db78f63aee8',
-        label: 'Anay waly almaseeh ki paidaish'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson05%2F6.mp3?alt=media&token=ceaad42d-f228-4dbf-b2b0-433e7c466755',
-        label: 'Gunah ka naya ilaaj'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson05%2F7.mp3?alt=media&token=feb555d2-2d4e-4015-a927-0b8ef4fc3a6f',
-        label: 'Gunah ki alamgeeri'),
-    AudioFile(
-        filePath:
-        'https://fairebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson05%2F8.mp3?alt=media&token=cdabfea7-9033-48de-9973-a74e07c539ff',
-        label: 'Masla kya hai'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson05%2F9.mp3?alt=media&token=72773c45-d8bd-4e62-b35d-e19ef7d64af2',
-        label: 'Nai Zindagi + Shariat-e-ilahi pr amal mein nakami'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FLesson05%2F10.mp3?alt=media&token=940eafb4-3c98-41c5-aa05-2c6bf571b326',
-        label: 'Nai Zindagi magar kese'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse02%2FPart02%2FAziz%20Talib%20Ilm%20(Ending).mp3?alt=media&token=32c41a88-812a-4f96-9d43-30fdf63c9eb2',
-        label: 'Sabaq ka Khulasa'),
+        'https://drive.google.com/uc?export=download&id=1PmvgUHZZTw3QiZws1BfMvqQDAzIQ4H8M',
+        label: ''),
   ];
   List<AudioFile> course3Introduction = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2Ftaurf.mp3?alt=media&token=d0d7c645-9ca4-4f31-b1ad-ff0b5de99558',
+        'https://drive.google.com/uc?export=download&id=1J03_L_0c57ztyxdVEMn9kSc46-WSaoS-',
         label: 'Sabaq ka Taurf'),
   ];
   List<AudioFile> course3lesson1 = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson01%2FAudio_1.mp3?alt=media&token=a908a065-d4ea-4612-a61d-e6b0675a7521',
+        'https://drive.google.com/uc?export=download&id=1JP3YuOJZMhzlhZdeO8CMcRKfl5czSnUB',
         label: 'almaseeh ki waladat-e-aqdas'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson01%2FAudio_2.mp3?alt=media&token=29b154e3-c82e-44a5-9b58-ecaa8c7c7a67',
-        label: 'aqwam e alam k liye barkat ka waada'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson01%2FAudio_3.mp3?alt=media&token=ff8818cd-3a3f-4e2c-a4f6-d2702a71e176',
-        label: 'Asmani farishto k nagmaat'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson01%2FAudio_4.mp3?alt=media&token=fcf0c51a-3a32-48b4-bf42-cc3f733f57cd',
-        label: 'Hasil e kalam'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson01%2FAudio_5.mp3?alt=media&token=8c50dfe0-b15f-4e87-adc2-c9b21663fb57',
-        label: 'Hazrat jibareel ki maarfat muqadsa mariam ko paigam'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson01%2FAudio_6.mp3?alt=media&token=a93a5691-6a5b-4026-aaa1-4fd03e3e0506',
-        label: 'Masharki zaireen aur asman pr ajeeb sitaray ka zahoor'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson01%2FAudio_7.mp3?alt=media&token=d7dfd5fe-6a49-4e60-9194-cf4ca9c46792',
-        label: 'Masharki zaireen aur asman pr ajeeb sitaray ka zahoor')
   ];
   List<AudioFile> course3lesson2 = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson02%2FAudio_1.mp3?alt=media&token=2b43eb4d-0e67-4f26-82c4-cd31e86b02de',
+        'https://drive.google.com/uc?export=download&id=1SFW1NQv87-9fpx1G_AypO6sJew51T8ru',
         label: 'aman o salamti ki bahali k liye almaseeh ka kirdar'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson02%2FAudio_2.mp3?alt=media&token=5936d9e7-e984-4d5e-bf90-636fa0dd5426',
-        label: 'aman o salamti ki barkat ki bahali'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson02%2FAudio_3.mp3?alt=media&token=a3f96a29-3ee2-4dad-a5a8-195732242fb8',
-        label: 'aqwam-e-alam k liye aman o slamti ki barkat'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson02%2FAudio_4.mp3?alt=media&token=fb04a3a6-d9a1-455d-a6a8-954a484d6be9',
-        label: 'Bahmi muhabat ki ahmiyat'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson02%2FAudio_5.mp3?alt=media&token=fa1ed47c-fa31-4fd0-aa78-3a5c64f6d94c',
-        label: 'Insan aur khuda k talukat ki bahaali'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson02%2FAudio_6.mp3?alt=media&token=cc813c9e-75b1-438e-8976-aff62e004654',
-        label: 'insano k bahmi talukaat ki bahali'),
-  ];
+   ];
   List<AudioFile> course3lesson3 = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson03%2FAudio_1.mp3?alt=media&token=8007cb35-a8bf-4e88-a90b-520375c93333',
+        'https://drive.google.com/uc?export=download&id=19SL3cV5oNi1KnFqc67wtCo1E9Qkpfq9d',
         label: 'Aik shadi mein wasail par barkat'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson03%2FAudio_2.mp3?alt=media&token=73d1c157-36b3-439d-9f99-a53792a7f3a4',
-        label: 'Almaseeh k waseela barkaat hasil krne ka bhaid'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson03%2FAudio_3.mp3?alt=media&token=9caead38-2ec2-42dd-b741-0609db9608d7',
-        label: 'Almaseeh ki hosla afza taleemat aur daway'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson03%2FAudio_4.mp3?alt=media&token=674a05c7-f34b-453c-b371-ec53381e87dc',
-        label: 'Aqwam-e-alam k liye khushali ki barkat'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson03%2FAudio_5.mp3?alt=media&token=1890fa8a-a209-47b1-8968-3a02be771837',
-        label: 'Mayoos kun lamhat mein barkat'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson03%2FAudio_6.mp3?alt=media&token=5240c55c-2a88-410b-95a2-4376704eb313',
-        label: 'Mehdood wasail pr barhoti ki barkat'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson03%2FAudio_7.mp3?alt=media&token=40c9379e-1fe0-46dd-bc79-36d12688da29',
-        label: 'wasail ko tabah krne wale anasir pr galba'),
   ];
   List<AudioFile> course3lesson4 = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson04%2FAudio_1.mp3?alt=media&token=b5f6a7f2-acc5-4296-80bf-c4fb4169edbc',
+        'https://drive.google.com/uc?export=download&id=1k9DAP_-WsBZgjWR25oxG4u3NtwF93fYb',
         label: 'Alif (bewa k betay ko zinda krna)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson04%2FAudio_2.mp3?alt=media&token=abf49bda-b1cd-4005-ba0d-8b21f99c754b',
-        label: 'Aqwam-e-alam ke liye shifa aur zindagi ki barkat'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson04%2FAudio_3.mp3?alt=media&token=e2b2cc6e-9656-4b45-a855-7ed785c26129',
-        label: 'Bay (asaabi amraaz)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson04%2FAudio_4.mp3?alt=media&token=0ff7e288-bf00-412c-add8-22ee54eea8fc',
-        label: 'Bay (yaier ki beti ko zinda krna)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson04%2FAudio_5.mp3?alt=media&token=0218459f-e23f-4c2e-a7ee-6fb12bde313a',
-        label: 'Daal (Badroohon se rehai)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson04%2FAudio_6.mp3?alt=media&token=697586a2-789b-4751-9e86-a7c01fcdcbd0',
-        label: 'Jeem (Lazar ko zinda krna'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson04%2FAudio_7.mp3?alt=media&token=011fd06c-ee84-47d1-b7f3-f5126101f4e5',
-        label: 'Jeem (Napaki ka bais ban\'ne wali biimariyeo se rehai)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson04%2FAudio_8.mp3?alt=media&token=4d803d90-2341-4f0d-bfe9-336524157992',
-        label: 'Seen (binayi aur goiyai ki bahali)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson04%2FAudio_9.mp3?alt=media&token=2a18a3ee-60fa-4f0a-b752-d497c92d84eb',
-        label: 'Shifa ki barkat ( alif - tap)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson04%2FAudio_10.mp3?alt=media&token=eac2152c-9527-43d6-ac3e-3210aaac9bb9',
-        label: 'shifa ki barkat ky baray anjeel muqqadas ki shadat'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson04%2FAudio_11.mp3?alt=media&token=cfdbb7c0-2639-402c-82e6-1326b3430c72',
-        label: 'zindagi ki barkat'),
   ];
   List<AudioFile> course3lesson5 = [
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson05%2FAudio_1.mp3?alt=media&token=52b58bf3-c664-444d-9aff-fe9d17eee446',
+        'https://drive.google.com/uc?export=download&id=1ILG-rwxmVAppwPzfFiiCHBgRXpg3jALf',
         label: 'Alif (maflooj ky gunah maf krna)'),
     AudioFile(
         filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson05%2FAudio_2.mp3?alt=media&token=6265c62b-81c3-4c07-b18c-63be75a2091a',
-        label: 'Alif (zakai ki zindagi mein tabdeeli)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson05%2FAudio_3.mp3?alt=media&token=57a659cc-3363-4014-a7f5-d3843be5d544',
-        label: 'Alif (zakai ki zindagi mein tabdeeli)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson05%2FAudio_4.mp3?alt=media&token=7117bcc8-dcbd-471e-8437-aee9de8d63a2',
-        label: 'Almaseeh ka zameen pr gunah maaf krne ka ikhtiyar'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson05%2FAudio_5.mp3?alt=media&token=4e6c7494-c02c-4693-a073-afcfcba02a9a',
-        label: 'Aqwam-e-alam ke liye gunahon se nijat ky barkat'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson05%2FAudio_6.mp3?alt=media&token=731efdb0-ea2b-4153-99e5-a0487ae8bf3a',
-        label: 'Bay (Aik badchalan aurat k gunah maaf krna)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson05%2FAudio_7.mp3?alt=media&token=cf29f217-f753-4ed2-acc4-17cb767d6d2d',
-        label: 'Bay (Aik zina kar aurat ky gunah maf krna)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson05%2FAudio_8.mp3?alt=media&token=7e649b82-e732-4b7e-9792-96c805b8dbb0',
-        label: 'Bay (Matti ki zindagi mein tabdeeli)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson05%2FAudio_9.mp3?alt=media&token=f0a0983d-81e6-4068-a95a-e84f4f28b14f',
-        label: 'Gunah se najat k liye elahi intezam'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson05%2FAudio_10.mp3?alt=media&token=3edcd227-bc67-4d6e-a9f0-6747d614a359',
-        label: 'Gunah se najat ka mafhoom'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson05%2FAudio_11.mp3?alt=media&token=82e14818-a7f8-4605-a305-c5daf3bcff60',
-        label: 'Insan ki zindagi mein gunah ka aagaz'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson05%2FAudio_12.mp3?alt=media&token=74b5d4e6-1ddd-43af-8b57-3e16559ec67c',
-        label: 'Insani zindagi pr gunah ka asar'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FLesson05%2FAudio_13.mp3?alt=media&token=41302a7e-3858-4e65-a010-49a5b7a133aa',
-        label: 'Jeem (Saul ki zindagi mein tabdeeli)'),
-    AudioFile(
-        filePath:
-        'https://firebasestorage.googleapis.com/v0/b/pbcs-bible-course-81b4b.appspot.com/o/audios%2FCourse03%2FSabaq%20ka%20khulasa.mp3?alt=media&token=c61dd9d7-0d6c-4fa2-862f-10bbaaadb869',
-        label: 'Sabaq ka khulasa'),
-  ];
+        'https://drive.google.com/uc?export=download&id=1IUVIjbEqXUbOBRus_krh_0nnhwfhUtZj',
+        label: ''),
+   ];
 }

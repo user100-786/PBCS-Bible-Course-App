@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 /* -- LIST OF ALL COLORS -- */
 
 // ignore: prefer_const_constructors
-final appPrimaryColor = Color(0xFFDA0C92).withOpacity(0.86);
+final appPrimaryColor = Color(0xFF8F2BA1);
 const greyColor = Color(0xffCBCACA);
-final tSecondaryColor = const Color(0xFFDA0C92).withOpacity(0.86);
+final tSecondaryColor = const Color(0xFF8F2BA1).withOpacity(0.86);
 //const tAccentColor = Color(0xFF001BFF);
 
 // ignore: non_constant_identifier_names

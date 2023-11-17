@@ -52,112 +52,120 @@ class _QuizScreenState extends State<QuizScreen> {
         backgroundColor: appPrimaryColor,
         title: Text("Question ${iterCounter + 1} / ${questionData.length}"),
       ),
-      body: SingleChildScrollView(
-          child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Text(
-              questionData[iterCounter][0],
-              textAlign: TextAlign.right,
-              style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-            ),
-          ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * .05,
-          ),
-          Center(
+      body: WillPopScope(
+        onWillPop: () async{
+          iterCounter = 0;
+          correctAnswer = 0;
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const ExpansionPanelListExample()));
+        return false;
+          },
+        child: SingleChildScrollView(
             child: Column(
-              children: [
-                Option(
-                  text: questionData[iterCounter][1],
-                  onTap: () {
-                    isSelected1 = true;
-                    isSelected2 = false;
-                    isSelected3 = false;
-                    isSelected4 = false;
-                    setState(() {});
-                  },
-                  isSelected: isSelected1,
-                ),
-                Option(
-                  text: questionData[iterCounter][2],
-                  onTap: () {
-                    isSelected1 = false;
-                    isSelected2 = true;
-                    isSelected3 = false;
-                    isSelected4 = false;
-                    setState(() {});
-                  },
-                  isSelected: isSelected2,
-                ),
-                Option(
-                  text: questionData[iterCounter][3],
-                  onTap: () {
-                    isSelected1 = false;
-                    isSelected2 = false;
-                    isSelected3 = true;
-                    isSelected4 = false;
-                    setState(() {});
-                  },
-                  isSelected: isSelected3,
-                ),
-                InkWell(
-                  onTap: () {
-                    checkAnswer();
-                    setState(() {
-                      if (iterCounter == questionData.length - 1) {
-                        iterCounter = 0;
-                        isSelected1 = false;
-                        isSelected2 = false;
-                        isSelected3 = false;
-                        isSelected4 = false;
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ResultScreen(correctAnswer: correctAnswer,)
-                            )
-                        );
-                      } else if (iterCounter == questionData.length - 2) {
-                        isLastQuestion = true;
-                        iterCounter++;
-                        isSelected1 = false;
-                        isSelected2 = false;
-                        isSelected3 = false;
-                        isSelected4 = false;
-                      } else {
-                        iterCounter++;
-                        isSelected1 = false;
-                        isSelected2 = false;
-                        isSelected3 = false;
-                        isSelected4 = false;
-                      }
-                    });
-                  },
-                  child: Container(
-                    margin: const EdgeInsets.only(top: 35),
-                    height: MediaQuery.of(context).size.height * .065,
-                    width: MediaQuery.of(context).size.width * .7,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: appPrimaryColor),
-                    child: Center(
-                      child: Text(
-                        isLastQuestion ? 'Submit' : 'Next',
-                        style:
-                            const TextStyle(fontSize: 20, color: Colors.white),
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Text(
+                questionData[iterCounter][0],
+                textAlign: TextAlign.right,
+                style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * .05,
+            ),
+            Center(
+              child: Column(
+                children: [
+                  Option(
+                    text: questionData[iterCounter][1],
+                    onTap: () {
+                      isSelected1 = true;
+                      isSelected2 = false;
+                      isSelected3 = false;
+                      isSelected4 = false;
+                      setState(() {});
+                    },
+                    isSelected: isSelected1,
+                  ),
+                  Option(
+                    text: questionData[iterCounter][2],
+                    onTap: () {
+                      isSelected1 = false;
+                      isSelected2 = true;
+                      isSelected3 = false;
+                      isSelected4 = false;
+                      setState(() {});
+                    },
+                    isSelected: isSelected2,
+                  ),
+                  Option(
+                    text: questionData[iterCounter][3],
+                    onTap: () {
+                      isSelected1 = false;
+                      isSelected2 = false;
+                      isSelected3 = true;
+                      isSelected4 = false;
+                      setState(() {});
+                    },
+                    isSelected: isSelected3,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      checkAnswer();
+                      setState(() {
+                        if (iterCounter == questionData.length - 1) {
+                          iterCounter = 0;
+                          isSelected1 = false;
+                          isSelected2 = false;
+                          isSelected3 = false;
+                          isSelected4 = false;
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ResultScreen(correctAnswer: correctAnswer,)
+                              )
+                          );
+                        } else if (iterCounter == questionData.length - 2) {
+                          isLastQuestion = true;
+                          iterCounter++;
+                          isSelected1 = false;
+                          isSelected2 = false;
+                          isSelected3 = false;
+                          isSelected4 = false;
+                        } else {
+                          iterCounter++;
+                          isSelected1 = false;
+                          isSelected2 = false;
+                          isSelected3 = false;
+                          isSelected4 = false;
+                        }
+                      });
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 35),
+                      height: MediaQuery.of(context).size.height * .065,
+                      width: MediaQuery.of(context).size.width * .7,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: appPrimaryColor),
+                      child: Center(
+                        child: Text(
+                          isLastQuestion ? 'Submit' : 'Next',
+                          style:
+                              const TextStyle(fontSize: 20, color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * .15,
-          ),
-        ],
-      )),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * .15,
+            ),
+          ],
+        )),
+      ),
     );
   }
   void checkAnswer(){

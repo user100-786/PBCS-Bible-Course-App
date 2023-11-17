@@ -69,6 +69,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pbcs_bible_course/New%20Views/audiobuttonprovider.dart';
 import 'package:pbcs_bible_course/New%20Views/finalcourselistscreen.dart';
 import 'package:pbcs_bible_course/New%20Views/sliderprovider.dart';
 import 'package:pbcs_bible_course/features/get_started_screen/login_screen.dart';
@@ -93,7 +94,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(providers: [
-      ChangeNotifierProvider(create: (_) => SliderProvider()),
+      ChangeNotifierProvider(
+          create: (_) => SliderProvider()),
+      ChangeNotifierProvider(
+          create: (_) => AudioButtonProvider()),
     ],
     child: MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -101,7 +105,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ExpansionPanelListExample(),
+      home: const LoginScreen(),
       // Add other routes as needed
     ),);
   }

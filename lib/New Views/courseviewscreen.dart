@@ -1,10 +1,13 @@
 
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:pbcs_bible_course/New%20Views/Lesson.dart';
+import 'package:pbcs_bible_course/New%20Views/audiobuttonprovider.dart';
 import 'package:pbcs_bible_course/New%20Views/audiolists.dart';
 import 'package:pbcs_bible_course/New%20Views/lessonData.dart';
 import 'package:pbcs_bible_course/New%20Views/quizview.dart';
@@ -20,10 +23,10 @@ class CourseScreen extends StatefulWidget {
   @override
   State<CourseScreen> createState() => _CourseScreenState();
 }
-final AudioPlayer audioPlayer = AudioPlayer();
+
 class _CourseScreenState extends State<CourseScreen> {
-   // Variable to track the current position
   String val = '';
+  final AudioPlayer audioPlayer = AudioPlayer();
   final FirebaseFirestore fireStoreDB = FirebaseFirestore.instance;
   final refStorage = FirebaseStorage.instance.ref();
   int currentAudioIndex = 0;
@@ -37,7 +40,7 @@ class _CourseScreenState extends State<CourseScreen> {
   AllCoursesLessonsData courseData = AllCoursesLessonsData();
   bool isPaused = false;
   bool initial = true;
-  Duration audioDuration = Duration.zero;
+  Duration? audioDuration = const Duration(seconds: 100);
   Duration audioPosition = Duration.zero;
   Duration currentPosition = Duration.zero;
   @override
@@ -60,16 +63,21 @@ class _CourseScreenState extends State<CourseScreen> {
   }
   @override
   Widget build(BuildContext context,) {
+    final audioButtonProvider = Provider.of<AudioButtonProvider>(context,listen: false);
     final sliderProvider = Provider.of<SliderProvider>(context,listen: false);
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: IconButton(icon: const Icon(Icons.arrow_back_ios_new),
           onPressed: () async{
-            if(isPlaying){
+            if(audioButtonProvider.isPlaying){
               audioPlayer.pause();
+              isPlaying = false;
+              isPaused = false;
+              audioButtonProvider.toggleAudioButton();
+              sliderProvider.value = 0;
             }
-          isPlaying = false;
+
             setState(() {
             });
           Navigator.pop(context);
@@ -79,10 +87,17 @@ class _CourseScreenState extends State<CourseScreen> {
       ),
       body: WillPopScope(
         onWillPop: ()async {
-          if(isPlaying){
-          audioPlayer.pause();
-        }
-        isPlaying = false;
+          if(audioButtonProvider.isPlaying) {
+            audioPlayer.pause();
+            audioButtonProvider.toggleAudioButton();
+            isPlaying = false;
+            isPaused = false;
+            sliderProvider.value=0;
+          }
+         setState(() {
+
+         });
+          Navigator.pop(context);
         return false;
         },
         child: Column(
@@ -115,61 +130,65 @@ class _CourseScreenState extends State<CourseScreen> {
                       return Expanded(
                         child: Column(
                           children: [
+
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Expanded(
                                   flex:1,
-                                  child: Align(
-                                    alignment: Alignment.topLeft,
-                                    child: Consumer(builder: (context, ref, child) {
-                                     // final isPlaying = ref.watch(audioButtonProvider);
-                                      return InkWell(
-                                        onTap: () async {
-                                         // ref.read(audioButtonProvider.notifier).toggleAudioButton();
-                                          playAudios(context);
-                                        },
-                                        child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Container(
-                                              margin: const EdgeInsets.only(left: 10, top: 0),
-                                              decoration: BoxDecoration(
-                                                color: appPrimaryColor,
-                                                borderRadius: BorderRadius.circular(50),
-                                              ),
-                                              height: MediaQuery.of(context).size.height * .07,
-                                              width: MediaQuery.of(context).size.width * .15,
-                                              child: Center(
-                                                child: Icon(
-                                                  isPlaying ? CupertinoIcons.pause_solid : CupertinoIcons.play_fill,
-                                                  color: Colors.white,
+                                  child: Consumer<AudioButtonProvider>(
+                                    builder: (context,audioButtonProvider,_){
+                                      return Align(
+                                          alignment: Alignment.topLeft,
+                                          child: InkWell(
+                                            onTap: () async {
+                                              audioButtonProvider.toggleAudioButton();
+                                              // ref.read(audioButtonProvider.notifier).toggleAudioButton();
+                                              playAudios();
+                                              // pr.autoProgress();
+                                            },
+                                            child: Column(
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                  margin: const EdgeInsets.only(left: 10, top: 0),
+                                                  decoration: BoxDecoration(
+                                                    color: appPrimaryColor,
+                                                    borderRadius: BorderRadius.circular(50),
+                                                  ),
+                                                  height: MediaQuery.of(context).size.height * .07,
+                                                  width: MediaQuery.of(context).size.width * .15,
+                                                  child: Center(
+                                                    child: Icon(
+                                                      audioButtonProvider.isPlaying ? CupertinoIcons.pause_solid : CupertinoIcons.play_fill,
+                                                      color: Colors.white,
+                                                    ),
+                                                  ),
                                                 ),
-                                              ),
+                                              ],
                                             ),
-                                          ],
-                                        ),
+                                          )
                                       );
-                                    }),
+                                    },
                                   ),
                                 ),
                                 Expanded(
                                   flex: 4,
-                                    child: Consumer<SliderProvider>(
-                                      builder: (context,val,child){
-                                        return Slider(
+                                  child: Consumer<SliderProvider>(
+                                    builder: (context,sliderProvider,_){
+                                      return Slider(
                                           min: 0,
-                                            max: 100,
-                                            value: val.value,
-                                            onChanged: (v){
-                                              val.value = v;
-                                              final seekPosition = Duration(seconds: v.toInt());
-                                              audioPlayer.seek(seekPosition);
-                                            }
-                                        );
-                                      },
-                                    )
+                                          max: 100,
+                                          value: sliderProvider.value,
+                                          onChanged: (v){
+                                            sliderProvider.value = v;
+                                            final seekPosition = Duration(seconds: v.toInt());
+                                            audioPlayer.seek(seekPosition);
+                                          }
+                                      );
+                                    },
+                                  ),
                                 ),
                               ],
                             ),
@@ -202,38 +221,62 @@ class _CourseScreenState extends State<CourseScreen> {
                       return Expanded(
                         child: Column(
                             children:[
-                              Align(
-                                alignment: Alignment.topLeft,
-                                child: Consumer(builder: (context, ref, child) {
-                                 // final isPlaying = ref.watch(audioButtonProvider);
-                                  return InkWell(
-                                    onTap: () async {
-                                  //    ref.read(audioButtonProvider.notifier).toggleAudioButton();
-                                      playAudios(context);
-                                    },
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          margin: const EdgeInsets.only(left: 10, top: 0),
-                                          decoration: BoxDecoration(
-                                            color: appPrimaryColor,
-                                            borderRadius: BorderRadius.circular(50),
-                                          ),
-                                          height: MediaQuery.of(context).size.height * .07,
-                                          width: MediaQuery.of(context).size.width * .15,
-                                          child: Center(
-                                            child: Icon(
-                                              isPlaying ? CupertinoIcons.pause_solid : CupertinoIcons.play_fill,
-                                              color: Colors.white,
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Expanded(
+                                    flex:1,
+                                    child: Consumer<AudioButtonProvider>(builder: (context,audioButtonProvider,ref){
+                                      return Align(
+                                          alignment: Alignment.topLeft,
+                                          child: InkWell(
+                                            onTap: () async {
+                                              audioButtonProvider.toggleAudioButton();
+                                              // ref.read(audioButtonProvider.notifier).toggleAudioButton();
+                                              playAudios();
+                                              // pr.autoProgress();
+                                            },
+                                            child: Column(
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                  margin: const EdgeInsets.only(left: 10, top: 0),
+                                                  decoration: BoxDecoration(
+                                                    color: appPrimaryColor,
+                                                    borderRadius: BorderRadius.circular(50),
+                                                  ),
+                                                  height: MediaQuery.of(context).size.height * .07,
+                                                  width: MediaQuery.of(context).size.width * .15,
+                                                  child: Center(
+                                                    child: Icon(
+                                                      audioButtonProvider.isPlaying ? CupertinoIcons.pause_solid : CupertinoIcons.play_fill,
+                                                      color: Colors.white,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  );
-                                }),
+                                          )
+                                      );
+                                    }),
+                                  ),
+                                  Expanded(
+                                      flex: 4,
+                                      child: Consumer<SliderProvider>(builder: (context,sliderProvider,_){
+                                        return Slider(
+                                            min: 0,
+                                            max: 100,
+                                            value: sliderProvider.value,
+                                            onChanged: (val){
+                                              sliderProvider.value = val;
+                                              final x = Duration(seconds: sliderProvider.value.toInt());
+                                              audioPlayer.seek(x);
+                                            }
+                                        );
+                                      })
+                                  ),
+                                ],
                               ),
                               Expanded(
                                 child: SingleChildScrollView(
@@ -241,7 +284,8 @@ class _CourseScreenState extends State<CourseScreen> {
                                     children: [
                                       Padding(
                                         padding: const EdgeInsets.only(left: 15,right: 15,top: 10),
-                                        child: Text(val,
+                                        child: Text(
+                                          val,
                                           style: const TextStyle(fontSize: 20),
                                           textAlign: TextAlign.right,
                                         ),
@@ -261,7 +305,7 @@ class _CourseScreenState extends State<CourseScreen> {
                                               borderRadius: BorderRadius.circular(30),
                                               color: appPrimaryColor,
                                             ),
-                                            child: Center(child: Text('Take Exam',style: TextStyle(fontSize: 17,color: Colors.white),)),
+                                            child: const Center(child: Text('Take Exam',style: TextStyle(fontSize: 17,color: Colors.white),)),
                                           ),
                                         ),
                                       ),
@@ -284,7 +328,8 @@ class _CourseScreenState extends State<CourseScreen> {
       ),
     );
   }
-  void playAudios(BuildContext context) async {
+  void playAudios() async {
+    audioDuration = audioPlayer.duration;
     if (isPlaying) {
       if (isPaused) {
         // Resume from where it was paused
@@ -292,13 +337,15 @@ class _CourseScreenState extends State<CourseScreen> {
         isPaused = false;
         await audioPlayer.play();
       } else {
-        // Pause the audio
-        currentPosition = await audioPlayer.position;
         isPaused = true;
+        // Pause the audio
+        currentPosition = audioPlayer.position;
+
         await audioPlayer.pause();
       }
     } else {
       await audioPlayer.setUrl(audioList[0].filePath);
+
       isPlaying = true;
       isPaused = false;
       await audioPlayer.play();
@@ -456,7 +503,7 @@ class _CourseScreenState extends State<CourseScreen> {
       break;
       default: {
         audioList = [];
-        val='There is No data in this course please restart the app';
+        val='There is no data in this lesson please restart the app Thankyou!';
       }
       break;
     }
